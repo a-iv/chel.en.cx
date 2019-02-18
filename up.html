@@ -25,10 +25,97 @@
     background-image: none !important;  
   }
 
+  /* -------- */
+  /* REdesign */
+  /* -------- */
+
+  /* Исправляем равнение шапки */
+  #tdLogoRight {
+    text-align: left;
+  }
+
+  /* Ширина изображения в шапке */
+  .re-header-image img {
+    width: 100%;
+  }
+
+  /* Два варианта шапки для ПК и мобил */
+  .re-header-image .logo-desktop {
+    display: none;
+  }
+  .re-header-image .logo-mobile {
+    display: block;
+  }
+  @media (min-width: 768px) {
+    .re-header-image .logo-desktop {
+      display: block;
+    }
+    .re-header-image .logo-mobile {
+      display: none;
+    }
+  }
+
+  /* Ссылки "Поделиться" под статьей */
+  .re-game-share {
+    margin-top: 7px;
+  }
+  .re-game-share .re-game-share-label {
+    float: left;
+    line-height: 17px;
+    margin-right: 4px;
+  }
+
+  /* Наши друзья и ссылки на соц.сети */
+  .re-friends, .re-social {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .re-social a {
+    margin: 0px 4px;
+  }
+  .re-friends img {
+    width: 152px;
+    border-radius: 5px;
+    margin: 0 auto 10px auto;
+  }
+  @media (max-width: 767px) {
+    .re-friends,
+    .re-social {
+      display: none;
+    }
+  }
+
+  /* ------------------------ */
+  /* Скрываем лишние элементы */
+  /* ------------------------ */
+
+  .menuWrap, /* Всё главное меню */
+  #tblUserBox tr:nth-child(5), /* Мои рефералы */
+  #tblUserBox tr:nth-child(7), /* SMS сервис */
+  #tdContentRight, /* Вся правая панель */
+  #boxCenterTopUsers, /* Топ личного состава */
+  #boxCenterTopTeams, /* Топ команд */
+  #boxCenterTopAuthors, /* Топ авторов вместе с ошметками html ниже */
+  #boxCenterTopAuthors + div[style="padding-top: 5px"],
+  #boxCenterTopAuthors + div[style="padding-top: 5px"] + div.hr,
+  #boxCenterLastPhotoGalleries, /* Фотогалереи */
+  #boxCenterDomainStaff .PageTitle, /* Заголовок раздела "Личный состав" */
+  #boxCenterDomainStaff tr:last-child, /* Новобранцы за неделю: */
+  #boxCenterDomainStaff > br, /* Отбивка перед ссылкой "Подробная статистика >>>" */
+  #boxCenterDomainStaff a[href="/Statistics.aspx"], /* Ссылка "Подробная статистика >>>" */
+  #tdEn016, /* Ссылка на www.en.cx в левом нижнем углу */
+  #tdLogo, /* Логотип в левом верхнем углу */
+  #boxMovie, /* Видео "Куда я попал?!? */
+  #boxOnlineHelp, /* Штатные ссылки на соц.сети */
+  #tdContentLeft > div[style="margin-bottom:10px; text-align:center;"] /* Блок со ссылкой "Размещение рекламы" (#lnkAdPlacement) */
+  {
+    display: none;
+  }
+
   /* ------------------ */
   /* Глобальные размеры */
   /* ------------------ */
-  
+
   /* Ограничиваем ширину шапки и контента */
   #tableHeader, #tableContent {
     max-width: 1680px;
@@ -174,33 +261,6 @@
     display: none;
   }
 
-  /* ------------------------ */
-  /* Скрываем лишние элементы */
-  /* ------------------------ */
-
-  .menuWrap, /* Всё главное меню */
-  #tblUserBox tr:nth-child(5), /* Мои рефералы */
-  #tblUserBox tr:nth-child(7), /* SMS сервис */
-  #tdContentRight, /* Вся правая панель */
-  #boxCenterTopUsers, /* Топ личного состава */
-  #boxCenterTopTeams, /* Топ команд */
-  #boxCenterTopAuthors, /* Топ авторов вместе с ошметками html ниже */
-  #boxCenterTopAuthors + div[style="padding-top: 5px"],
-  #boxCenterTopAuthors + div[style="padding-top: 5px"] + div.hr,
-  #boxCenterLastPhotoGalleries, /* Фотогалереи */
-  #boxCenterDomainStaff .PageTitle, /* Заголовок раздела "Личный состав" */
-  #boxCenterDomainStaff tr:last-child, /* Новобранцы за неделю: */
-  #boxCenterDomainStaff > br, /* Отбивка перед ссылкой "Подробная статистика >>>" */
-  #boxCenterDomainStaff a[href="/Statistics.aspx"], /* Ссылка "Подробная статистика >>>" */
-  #tdEn016, /* Ссылка на www.en.cx в левом нижнем углу */
-  #tdLogo, /* Логотип в левом верхнем углу */
-  #boxMovie, /* Видео "Куда я попал?!? */
-  #boxOnlineHelp, /* Штатные ссылки на соц.сети */
-  #tdContentLeft > div[style="margin-bottom:10px; text-align:center;"] /* Блок со ссылкой "Размещение рекламы" (#lnkAdPlacement) */
-  {
-    display: none;
-  }
-  
   /* ----- */
   /* Почта */
   /* ----- */
@@ -951,65 +1011,6 @@
     filter: alpha(opacity=100);
   }
 
-  /* -------- */
-  /* REdesign */
-  /* -------- */
-  
-  /* Исправляем равнение шапки */
-  #tdLogoRight {
-    text-align: left;
-  }
-  
-  /* Ширина изображения в шапке */
-  .re-header-image img {
-    width: 100%;
-  }
-
-  /* Два варианта шапки для ПК и мобил */
-  .re-header-image .logo-desktop {
-    display: none;
-  }
-  .re-header-image .logo-mobile {
-    display: block;
-  }
-  @media (min-width: 768px) {
-    .re-header-image .logo-desktop {
-      display: block;
-    }
-    .re-header-image .logo-mobile {
-      display: none;
-    }
-  }
-
-  /* Ссылки "Поделиться" под статьей */
-  .re-game-share {
-    margin-top: 7px;
-  }
-  .re-game-share .re-game-share-label {
-    float: left;
-    line-height: 17px;
-    margin-right: 4px;
-  }
-  
-  /* Наши друзья и ссылки на соц.сети */
-  .re-friends, .re-social {
-    text-align: center;
-    margin-top: 10px;
-  }
-  .re-social a {
-    margin: 0px 4px;
-  }
-  .re-friends img {
-    width: 152px;
-    border-radius: 5px;
-    margin: 0 auto 10px auto;
-  }
-  @media (max-width: 767px) {
-    .re-friends,
-    .re-social {
-      display: none;
-    }
-  }
   <!--
 --></style>
 <script type="text/javascript" src="http://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
