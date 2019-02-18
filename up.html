@@ -40,19 +40,19 @@
   }
 
   /* Два варианта шапки для ПК и мобил */
-  .re-header-image .logo-desktop {
-    display: none;
-  }
-  .re-header-image .logo-mobile {
-    display: block;
-  }
-  @media (min-width: 768px) {
     .re-header-image .logo-desktop {
       display: block;
     }
     .re-header-image .logo-mobile {
       display: none;
     }
+  @media (max-width: 767px) {
+  .re-header-image .logo-desktop {
+    display: none;
+  }
+  .re-header-image .logo-mobile {
+    display: block;
+  }
   }
 
   /* Ссылки "Поделиться" под статьей */
@@ -139,11 +139,12 @@
     max-width: 100%;
   }
 
-  /* ----------------- */
-  /* Раскладка панелей */
-  /* ----------------- */
+  /* -------------------------------------- */
+  /* Раскладка колонок для мобильной версии */
+  /* -------------------------------------- */
   
-  /* Переносим левую панель для мобилок в начало страницы */
+  @media (max-width: 767px) {
+  /* Переносим левую панель в начало страницы */
   #tdContentLeft {
     display: inline-block;
     width: 100%;
@@ -166,31 +167,6 @@
     width: 100%;
     text-align: center;
   }
-
-  /* Для планшетов и ПК возвращаем левую панель на своё место */
-  @media (min-width: 768px) {
-    #tdContentLeft {
-      display: table-cell;
-      width: 178px;
-      padding-left: 14px;
-      padding-right: 14px;
-      padding-bottom: 14px;
-    }
-    #tdContentLeft > div {
-      padding-left: 0;
-      padding-right: 0;
-    }
-    #tdContentLeft > div.spacer {
-      display: block;
-    }
-    #tdContentCenter {
-      display: table-cell;
-      width: 99%;
-    }
-    .userAdItem {
-      width: 178px;
-      text-align: left;
-    }
   }
   
   /* ----------------------------------------------------------------- */
@@ -198,6 +174,7 @@
   /* ----------------------------------------------------------------- */
 
   /* Разделяем заголовок игры на несколько строк */
+  @media (max-width: 767px) {
   #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
   .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td {
     display: inline-block;
@@ -207,18 +184,6 @@
   .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h {
     padding-left: 0;
   }
-
-  /* Для планшетов и ПК */
-  @media (min-width: 768px) {
-    #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
-    .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td {
-      display: table-cell;
-      padding-bottom: 0;
-    }
-    #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h,
-    .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h {
-      padding-left: 5px;
-    }
   }
   
   /* ---------- */
