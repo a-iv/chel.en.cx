@@ -238,23 +238,23 @@
   /* Селекторы по номеру могут быть ошибочными. Javascript исправит это как только будет готов. */
 
   /* Список игр: */
-  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(2), /* Играем: */
-  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(3), /* Последовательность прохождения: */
-  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(6), /* Начало игры в вашей временной зоне: */
-  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(7), /* Время окончания: */
-  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(8), /* Времени осталось: */
-  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(9), /* Подтверждения принимаются до: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(2), /* Играем: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(3), /* Последовательность прохождения: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(6), /* Начало игры в вашей временной зоне: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(7), /* Время окончания: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(8), /* Времени осталось: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(9), /* Подтверждения принимаются до: */
   /* Информация об игре: */
-  h1 + .gameInfo:not(.re-game-info) > tbody > tr:nth-child(12), /* Начало игры в вашей временной зоне: */
-  h1 + .gameInfo:not(.re-game-info) > tbody > tr:nth-child(13), /* Время окончания: */
-  h1 + .gameInfo:not(.re-game-info) > tbody > tr:nth-child(14), /* Времени осталось: */
-  h1 + .gameInfo:not(.re-game-info) > tbody > tr:nth-child(16) /* Призовой фонд: */
+  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(12), /* Начало игры в вашей временной зоне: */
+  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(13), /* Время окончания: */
+  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(14), /* Времени осталось: */
+  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(16) /* Призовой фонд: */
   {
     display: none;
   }
 
   /* Эти классы устанавливает javascript */
-  .re-game-info .re-unused-game-info {
+  .re-unused-game-info-ready .re-unused-game-info {
     display: none;
   }
 
@@ -1203,7 +1203,7 @@
     ).closest("tr").addClass('re-unused-game-info');
 
     /* Устанавливаем признак готовности данных */
-    $(".gameInfo").addClass('re-game-info');
+    $(".gameInfo").addClass('re-unused-game-info-ready');
 
     /* Упрощаем формат записи времени начала игры */
     $(
