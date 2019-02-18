@@ -219,39 +219,6 @@
     }
   }
 
-  /* ------------ */
-  /* Свойства игр */
-  /* ------------ */
-
-  /* Мы считаем, что часть свойств игры не нужно отображать, тем более в общем спике на главной странице. */
-
-  /* Свойства не имеют опозновательных признаков, а их состав может отличаться. */
-  /* Поэтому единственный вариант - использовать javascript. */
-
-  /* Чтобы уменьшить моргания после загрузки страницы, предворительно скрываем лишнюю информацию. */
-  /* Селекторы по номеру могут быть ошибочными. Javascript исправит это как только будет готов. */
-
-  /* Список игр: */
-  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(2), /* Играем: */
-  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(3), /* Последовательность прохождения: */
-  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(6), /* Начало игры в вашей временной зоне: */
-  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(7), /* Время окончания: */
-  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(8), /* Времени осталось: */
-  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(9), /* Подтверждения принимаются до: */
-  /* Информация об игре: */
-  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(12), /* Начало игры в вашей временной зоне: */
-  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(13), /* Время окончания: */
-  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(14), /* Времени осталось: */
-  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(16) /* Призовой фонд: */
-  {
-    display: none;
-  }
-
-  /* Эти классы устанавливает javascript */
-  .re-unused-game-info-ready .re-unused-game-info {
-    display: none;
-  }
-
   /* ------------------ */
   /* Информация об игре */
   /* ------------------ */
@@ -1018,6 +985,39 @@
       word-break: initial;
     }
   }
+
+  /* ------------ */
+  /* Свойства игр */
+  /* ------------ */
+
+  /* Мы считаем, что часть свойств игры не нужно отображать, тем более в общем спике на главной странице. */
+
+  /* Свойства не имеют опозновательных признаков, а их состав может отличаться. */
+  /* Поэтому единственный вариант - использовать javascript. */
+
+  /* Чтобы уменьшить моргания после загрузки страницы, предворительно скрываем лишнюю информацию. */
+  /* Селекторы по номеру могут быть ошибочными. Javascript исправит это как только будет готов. */
+
+  /* Список игр: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(2), /* Играем: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(3), /* Последовательность прохождения: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(6), /* Начало игры в вашей временной зоне: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(7), /* Время окончания: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(8), /* Времени осталось: */
+  .gameInfo:not(.re-unused-game-info-ready) > tbody > tr > td > table > tbody > tr:nth-child(9), /* Подтверждения принимаются до: */
+  /* Информация об игре: */
+  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(12), /* Начало игры в вашей временной зоне: */
+  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(13), /* Время окончания: */
+  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(14), /* Времени осталось: */
+  h1 + .gameInfo:not(.re-unused-game-info-ready) > tbody > tr:nth-child(16) /* Призовой фонд: */
+  {
+    display: none;
+  }
+
+  /* Эти классы устанавливает javascript */
+  .re-unused-game-info-ready .re-unused-game-info {
+    display: none;
+  }
   <!--
 --></style>
 <script type="text/javascript" src="http://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
@@ -1133,6 +1133,36 @@
     $('.re-social-placeholder').html(social);
   });
 
+  /* -------------- */
+  /* Состав команды */
+  /* -------------- */
+
+  $(document).ready(function () {
+    /* Исправление невозможности переноса имени пользователя, содержащего Hangul Jungseong Filler */
+    $("#aspnetForm a:contains('\u1160')").each(function () {
+      var text = $(this).text();
+      $(this).text(text.replace(new RegExp('\u1160', 'g'), '\u00A0'));
+    });
+  });
+
+  /* -------------------------------- */
+  /* Скрываем возможнсть отправки SMS */
+  /* -------------------------------- */
+
+  $(document).ready(function () {
+    /* Отправить SMS сообщение членам команды */
+    $('#lnkSendSmsMessageToMembers').closest('tr').hide();
+
+    /* Отправить SMS из личного дела */
+    var send = $('#enUserDetailsPanel_lnkSendSms').closest('td');
+    $('#enUserDetailsPanel_lnkSendSms').remove();
+
+    /* Убираем лишний разделитель в тексте */
+    if (send.length) {
+      send.html(send.html().replace(/\|\s+\|/g, "|"));
+    }
+  });
+
   /* ------------ */
   /* Свойства игр */
   /* ------------ */
@@ -1169,36 +1199,6 @@
       $(this).text(datetime.substring(0, datetime.length - 4));
     });
 
-  });
-
-  /* -------------- */
-  /* Состав команды */
-  /* -------------- */
-
-  $(document).ready(function () {
-    /* Исправление невозможности переноса имени пользователя, содержащего Hangul Jungseong Filler */
-    $("#aspnetForm a:contains('\u1160')").each(function () {
-      var text = $(this).text();
-      $(this).text(text.replace(new RegExp('\u1160', 'g'), '\u00A0'));
-    });
-  });
-
-  /* -------------------------------- */
-  /* Скрываем возможнсть отправки SMS */
-  /* -------------------------------- */
-
-  $(document).ready(function () {
-    /* Отправить SMS сообщение членам команды */
-    $('#lnkSendSmsMessageToMembers').closest('tr').hide();
-
-    /* Отправить SMS из личного дела */
-    var send = $('#enUserDetailsPanel_lnkSendSms').closest('td');
-    $('#enUserDetailsPanel_lnkSendSms').remove();
-
-    /* Убираем лишний разделитель в тексте */
-    if (send.length) {
-      send.html(send.html().replace(/\|\s+\|/g, "|"));
-    }
   });
 // ]]></script>
 <div class="re-header">
