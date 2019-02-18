@@ -25,27 +25,28 @@
     background-image: none !important;  
   }
 
-  /* ------ */
-  /* Разное */
-  /* ------ */
+  /* ------------------ */
+  /* Глобальные размеры */
+  /* ------------------ */
   
-  /* Ограничиваем ширину контента */
-  #tableContent, .re-menu, .re-header-image {
+  /* Ограничиваем ширину шапки и контента */
+  #tableHeader, #tableContent {
     max-width: 1680px;
     margin: auto;
   }
-  
+
   /* Органичиваем ширину диалогового окна */
   .ui-dialog {
     max-width: 100%;
   }
 
-  /* Сжимаем до размера экрана слишком большие картинки в списке игр и в анонсах */
-  .divDescr img,
-  .gameInfo ~ table img {
+  /* Сжимаем до размера экрана слишком большие картинки */
+  .divDescr img, /* В списке игр */
+  .gameInfo ~ table img /* В анонсах */
+  {
     max-width: 100%;
   }
-  
+
   /* Сжимаем до размера экрана вставки с видео */
   #tdContentCenter iframe {
     max-width: 100%;
