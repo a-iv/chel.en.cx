@@ -1,0 +1,105 @@
+﻿<script type="text/javascript">// <![CDATA[
+  $(document).ready(function() {
+    var backgrounds = [
+      ["#000.png", "100%"],
+      ["85387.jpg", "100%"],
+      ["dark-dark-green.jpg", "100%"],
+      ["dark-green.jpg", "100%"],
+      ["grasstexture0_yapfiles.ru.jpg", "initial"],
+      ["green-and-black-wallpapers-10772750.jpg", "100%"],
+      ["IMG_138873.jpg", "100%"],
+      ["stone-707173.jpg", "100%"],
+      ["Texture_Brick_Green_Wall_520884_1920x1080.jpg", "100%"],
+      ["wall-941027.jpg", "100%"],
+      ["wood-fibre-boards-3024424.jpg", "100%"],
+      ["midle-green.jpg", "100%"],
+      ["moscow.jpg", "100%"],
+      ["72.png", "initial"],
+      ["arena.jpg", "initial"],
+      ["sakh.jpg", "initial"],
+    ];
+    $('#tdContentCenter > table:first-child').before('<div class="back-buttons"></div>');
+    $.each(backgrounds, function(key, value) {
+      $('.back-buttons').append(
+        '<button ' +
+          'class="back-button" ' +
+          'data-image="' + value[0] + '" ' +
+          'data-size="' + value[1] + '" ' +
+          '>' + key + '</button>');});
+    $('.back-buttons .back-button').click(function() {
+      $('body').css(
+        'background-image',
+        'url("http://d1.endata.cx/images/personal/85473/' + $(this).data('image') + '")');
+      $('body').css(
+        'background-size', $(this).data('size'));
+    });
+
+    $('.back-buttons').append(
+      '<br>' +
+      '<button class="norm-css">A</button>' +
+      '<button class="msk-css">B</button>' +
+      '<button class="orel-css">C</button>' +
+      '<button class="chel-css">D</button>'
+    );
+
+    $('.back-buttons .norm-css').click(function() {
+      $('#msk').attr('disabled', 'disabled');
+      $('#orel').attr('disabled', 'disabled');
+      $('#combo').attr('disabled', 'disabled');
+    });
+    $('.back-buttons .msk-css').click(function() {
+      $('#msk').removeAttr('disabled');
+      $('#orel').attr('disabled', 'disabled');
+      $('#combo').attr('disabled', 'disabled');
+    }).click();
+    $('.back-buttons .orel-css').click(function() {
+      $('#msk').attr('disabled', 'disabled');
+      $('#orel').removeAttr('disabled');
+      $('#combo').attr('disabled', 'disabled');
+    });
+    $('.back-buttons .combo-css').click(function() {
+      $('#msk').attr('disabled', 'disabled');
+      $('#orel').removeAttr('disabled');
+      $('#combo').removeAttr('disabled');
+    });
+
+  });
+// ]]></script>
+<p><link id="orel" href="http://d1.endata.cx/images/personal/1451482/orel_vl_style.css" type="text/css" rel="stylesheet" media="screen,projection" /></p>
+<style><!--
+  -->
+  .back-buttons button {
+    margin: 4px;
+  }
+  <!--
+--></style>
+<style id="msk"><!--
+  -->
+  .leftMenu {
+    background-color: transparent;
+  }
+  .enPnl1.pnGr, .enPnl1.clr1 {
+    background: rgba(0, 30, 0, 0.5) none repeat scroll 0% 0% !important;
+  }
+  .bg_main,
+  .center-column,
+  tr.topWinnerHead {
+    background: rgba(13, 59, 0, 0.5) repeat scroll 0% 0% !important;
+  }
+  <!--
+--></style>
+<style id="combo"><!--
+  -->
+  .leftMenu {
+    background-color: transparent;
+  }
+  .enPnl1.pnGr, .enPnl1.clr1 {
+    background: rgba(10, 10, 10, 0.5) none repeat scroll 0% 0% !important;
+  }
+  .bg_main,
+  .center-column,
+  tr.topWinnerHead {
+    background: rgba(30, 30, 30, 0.5) repeat scroll 0% 0% !important;
+  }
+  <!--
+--></style>

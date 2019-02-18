@@ -1,0 +1,1287 @@
+﻿<style><!--
+  -->
+  /* -------------- */
+  /* Цветовая схема */
+  /* -------------- */
+
+  /* Фон */
+  body {
+    background-image: url("http://d1.endata.cx/images/personal/85473/texture-brick-green.jpg");
+    background-color: rgb(48, 69, 34); /* Пока не загрузилась картинка */
+    background-size: 100%;
+  }
+  
+  /* Прозрачная левая колонка */
+  .leftMenu {
+    background-color: transparent;
+  }
+  
+  /* Полупрозрачные панели */
+  .center-column, /* Центральная колонка */
+  .enPnl1.pnGr, /* Панели в левой колонке */
+  .enPnl1.clr1 /* Панели в моём балансе */
+  {
+    background-color: rgba(7, 29, 12, 0.5) !important;
+    background-image: none !important;  
+  }
+
+  /* ------ */
+  /* Разное */
+  /* ------ */
+  
+  /* Ограничиваем ширину контента */
+  #tableContent, .re-menu, .re-header-image {
+    max-width: 1680px;
+    margin: auto;
+  }
+  
+  /* Органичиваем ширину диалогового окна */
+  .ui-dialog {
+    max-width: 100%;
+  }
+
+  /* Сжимаем до размера экрана слишком большие картинки в списке игр и в анонсах */
+  .divDescr img,
+  .gameInfo ~ table img {
+    max-width: 100%;
+  }
+  
+  /* Сжимаем до размера экрана вставки с видео */
+  #tdContentCenter iframe {
+    max-width: 100%;
+  }
+
+  /* Разрешаем перенос пути до темы на форуме */
+  #tdContentCenter div.Text9 span.Text0 {
+    display: inline-block;
+  }
+
+  /* Разрешаем перенос заголовка приветственного сообщения на главной */
+  #boxCenterIntro tr > td:nth-child(2) {
+    white-space: normal;
+  }
+  
+  /* Центрирование ссылки на промо видео */
+  #boxMovie img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Промо для неавторизованных пользователей */
+  #boxCenterContent {
+    display: none;
+  }
+  #boxCenterIntro + #boxCenterContent {
+    display: block;
+  }
+  
+  /* !!! РАЗДЕЛ МОЖНО УДАЛИТЬ !!! */
+  /* ------------ */
+  /* Главное меню */
+  /* ------------ */
+
+  /* Скрываем ссылку на мобильную версию и ответкую часть */
+  .menuWrap > tbody > tr:first-child > td:first-child,
+  .menuWrap > tbody > tr:first-child > td:last-child { 
+      display: none;
+  }
+  
+  /* Позволяем меню работать на любых экранах */
+  .menu {
+    width: auto;
+  }
+  
+  /* Изменения для мобильной верстки */
+  .menu li {
+    width: auto;
+  }
+  .menu li > .wr > a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  /* Планшеты и ПК */
+  @media (min-width: 768px) {
+    .menu li {
+      width: 124px;
+    }
+    .menu li > .wr > a {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+  
+  /* ----------------- */
+  /* Раскладка панелей */
+  /* ----------------- */
+  
+  /* Переносим левую панель для мобилок в начало страницы */
+  #tdContentLeft {
+    display: inline-block;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+  }
+  #tdContentLeft > div {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  #tdContentLeft > div.spacer {
+    display: none;
+  }
+  #tdContentCenter {
+    display: inline-block;
+    width: 100%;
+  }
+  .userAdItem {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Для планшетов и ПК возвращаем левую панель на своё место */
+  @media (min-width: 768px) {
+    #tdContentLeft {
+      display: table-cell;
+      width: 178px;
+      padding-left: 14px;
+      padding-right: 14px;
+      padding-bottom: 14px;
+    }
+    #tdContentLeft > div {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    #tdContentLeft > div.spacer {
+      display: block;
+    }
+    #tdContentCenter {
+      display: table-cell;
+      width: 99%;
+    }
+    .userAdItem {
+      width: 178px;
+      text-align: left;
+    }
+  }
+  
+  /* ----------------------------------------------------------------- */
+  /* Заголовок игры в прошедших играх, списке игр и информации об игре */
+  /* ----------------------------------------------------------------- */
+
+  /* Разделяем заголовок игры на несколько строк */
+  #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
+  .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td {
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h,
+  .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h {
+    padding-left: 0px;
+  }
+
+  /* Для планшетов и ПК */
+  @media (min-width: 768px) {
+    #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
+    .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td {
+      display: table-cell;
+      padding-bottom: 0px;
+    }
+    #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h,
+    .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h {
+      padding-left: 5px;
+    }
+  }
+  
+  /* ---------- */
+  /* Список игр */
+  /* ---------- */
+  
+  /* Чтобы уменьшить моргания после загрузки страницы, предворительно скрываем лишнюю информацию */
+  /* !!! Эти селекторы могут быть ошибочными, javascript ниже всё исправит !!! */
+  
+  /* Список игр: */
+  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(2), /* Играем: */
+  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(3), /* Последовательность прохождения: */
+  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(6), /* Начало игры в вашей временной зоне: */
+  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(7), /* Время окончания: */
+  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(8), /* Времени осталось: */
+  .gameInfo:not(.re-game-info) > tbody > tr > td > table > tbody > tr:nth-child(9),  /* Подтверждения принимаются до: */
+  /* Информация об игре: */
+  h1 + .gameInfo:not(.re-game-info) > tbody > tr:nth-child(12), /* Начало игры в вашей временной зоне: */
+  h1 + .gameInfo:not(.re-game-info) > tbody > tr:nth-child(13), /* Время окончания: */
+  h1 + .gameInfo:not(.re-game-info) > tbody > tr:nth-child(14), /* Времени осталось: */
+  h1 + .gameInfo:not(.re-game-info) > tbody > tr:nth-child(16)  /* Призовой фонд: */
+  {
+    display: none;
+  }
+
+  /* Эти классы устанавливает javascript */
+  .re-game-info .re-unused-game-info {
+    display: none;
+  }
+
+  /* ------------------ */
+  /* Информация об игре */
+  /* ------------------ */
+  
+  /* Скрываем фотогалерею */
+  span#lblPhotoGalleries,
+  span#lblPhotoGalleries + br,
+  span#lblPhotoGalleries + br + br,
+  span#lblPhotoGalleries + br + br + table {
+    display: none;
+  }
+
+  /* ------------------------ */
+  /* Скрываем лишние элементы */
+  /* ------------------------ */
+
+  .menuWrap, /* Всё главное меню */
+  #tblUserBox tr:nth-child(5), /* Мои рефералы */
+  #tblUserBox tr:nth-child(7), /* SMS сервис */
+  #tdContentRight, /* Вся правая панель */
+  #boxCenterTopUsers, /* Топ личного состава */
+  #boxCenterTopTeams, /* Топ команд */
+  #boxCenterTopAuthors, /* Топ авторов вместе с ошметками html ниже */
+  #boxCenterTopAuthors + div[style="padding-top: 5px"],
+  #boxCenterTopAuthors + div[style="padding-top: 5px"] + div.hr,
+  #boxCenterLastPhotoGalleries, /* Фотогалереи */
+  #boxCenterDomainStaff .PageTitle, /* Заголовок раздела "Личный состав" */
+  #boxCenterDomainStaff tr:last-child, /* Новобранцы за неделю: */
+  #boxCenterDomainStaff > br, /* Отбивка перед ссылкой "Подробная статистика >>>" */
+  #boxCenterDomainStaff a[href="/Statistics.aspx"], /* Ссылка "Подробная статистика >>>" */
+  #tdEn016, /* Ссылка на www.en.cx в левом нижнем углу */
+  #tdLogo, /* Логотип в левом верхнем углу */
+  #boxMovie, /* Видео "Куда я попал?!? */
+  #boxOnlineHelp, /* Штатные ссылки на соц.сети */
+  #tdContentLeft > div[style="margin-bottom:10px; text-align:center;"] /* Блок со ссылкой "Размещение рекламы" (#lnkAdPlacement) */
+  {
+    display: none;
+  }
+  
+  /* ----- */
+  /* Почта */
+  /* ----- */
+  
+  /* Схлапываем расстояние между табами */
+  .enMailTab {
+    font-size: 0px;
+  }
+  .enMailTab > tbody > tr > td {
+    font-size: 12px;
+  }
+  
+  /* Позволяем переносить табы на новую сточку */
+  .enMailTab > tbody > tr > td {
+    float: left;
+  }
+
+  /* Скрываем отчеркивание справа от табов */
+  .enMailTab > tbody > tr > td.td_last {
+    display: none;
+  }
+  @media (min-width: 992px) {
+    .enMailTab > tbody > tr {
+      background: url("http://cdn.endata.cx/images/tab/EnMail/freeBg.gif") repeat-x bottom;
+    }
+  }
+
+  /* Схлапываем нижнюю и верхнюю раницы при переносе табов */
+  .enMailTab > tbody > tr > td,
+  .enMailTab > tbody > tr > td.td_free {
+    margin-top: -1px;
+  }
+
+  /* Гарантируем левую границу табов */
+  .enMailTab > tbody > tr > td:not(.td_free)::before {
+    content: '';
+    float: left;
+    background: url("http://cdn.endata.cx/images/tab/EnMail/freeRight.gif") no-repeat left top;
+    height: 100%;
+    width: 1px;
+    margin-left: -1px;
+  }
+
+  /* Переносим "Cоздать" на новую строчку */
+  @media (max-width: 991px) {
+    .enMailTab #mailTabNew + td {
+      clear: both;
+    }
+    .enMailTab .td_free, .enMailTab .td_free a {
+      background: none;
+    }
+  }
+  
+  /* Позволяем переносить действия с письмами */
+  #tblMailSelect {
+    margin-top: -8px;
+    font-size: 0px;
+  }
+  #tblMailSelect td {
+    display: inline-block;
+    padding-top: 8px;
+  }
+  
+  /* Отключил перенос текста действий с письмом */
+  #EnMailFolderForm .msgHead div[style="padding-top: 12px;"] a {
+    white-space: nowrap;
+  }
+  
+  /* Разрешил перенос длинного времени и домена */
+  #EnMailFolderForm .msgHead .msgDateTime {
+    white-space: normal;
+  }
+
+  /* Создать письмо на планшетах и мобильных */
+  @media (max-width: 767px) {
+    /* Разрешаем переносить поля */
+    form[action="/EnMail.aspx?ctrl=new"] td {
+      margin-top: 8px;
+      float: left;
+    }
+  
+    /* Разрываем форму на 2 строки по radio кнопкам */
+    form[action="/EnMail.aspx?ctrl=new"] td[style="padding-left:4px"] {
+      clear: both;
+      padding-left: 0px !important;
+    }
+  }
+  
+  /* --------------------------------------- */
+  /* Общее для Моё личное дело и Моя команда */
+  /* --------------------------------------- */
+
+  /* Раскладка аватарки и информации */
+  script + table > tbody > tr:nth-child(2) div.enPnl1 > table > tbody > tr > td,
+  script + br + div[style="width:100%;"] > div.enPnl1 > table > tbody > tr > td {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  script + table > tbody > tr:nth-child(2) div.enPnl1,
+  script + br + div[style="width:100%;"] > div.enPnl1 {
+    padding: 0px 0px 10px 10px !important;
+  }
+  script + table > tbody > tr:nth-child(2) div.enPnl1 > table > tbody > tr > td:nth-child(2),
+  script + br + div[style="width:100%;"] > div.enPnl1 > table > tbody > tr > td:nth-child(2) {
+    padding-left: 0px !important;
+  }
+  script + table > tbody > tr:nth-child(2) div.enPnl1 > table > tbody > tr > td,
+  script + br + div[style="width:100%;"] > div.enPnl1 > table > tbody > tr > td {
+    padding-right: 10px;
+  }
+
+  /* Табы */
+  script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr,
+  script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr,
+  script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr,
+  script + br + div[style="width:100%;"] + br + div + div + a + div + div + table + br + br + div table.enTab > tbody > tr {
+    font-size: 0px;
+  }
+  script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr > td,
+  script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr > td,
+  script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr > td,
+  script + br + div[style="width:100%;"] + br + div + div + a + div + div + table + br + br + div table.enTab > tbody > tr > td {
+    display: inline-block;
+  }
+  script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr > td.td_last,
+  script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr > td.td_last,
+  script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr > td.td_last,
+  script + br + div[style="width:100%;"] + br + div + div + a + div + div + table + br + br + div table.enTab > tbody > tr > td.td_last {
+    width: initial !important;
+  }
+
+  /* Схлапываем нижнюю и верхнюю раницы при переносе табов */
+  script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr > td,
+  script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr > td,
+  script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr > td,
+  script + br + div[style="width:100%;"] + br + div + div + a + div + div + table + br + br + div table.enTab > tbody > tr > td {
+    margin-top: -1px;
+  }
+
+  /* Гарантируем правую границу табов */
+  script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr > td:not(.td_last)::before,
+  script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr > td:not(.td_last)::before,
+  script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr > td:not(.td_last)::before,
+  script + br + div[style="width:100%;"] + br + div + div + a + div + div + table + br + br + div table.enTab > tbody > tr > td:not(.td_last)::before {
+    content: '';
+    float: right;
+    background: url("http://cdn.endata.cx/images/tab/tabLeftLast.gif") no-repeat left top;
+    height: 100%;
+    width: 1px;
+    margin-right: -1px;
+  }
+  
+  /* Послужной список */
+  @media (max-width: 479px) {
+    /* Скрываем иконки с нумерацию */
+    script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table > tbody > tr > td:first-child:not([colspan]),
+    script + br + div + br + br + div #aspnetForm > div + div + table > tbody > tr > td:first-child:not([colspan]),
+    table.tblGBSection + br + br + div #aspnetForm > div + div + table > tbody > tr > td:first-child:not([colspan]) {
+      display: none;
+    }
+
+    /* Уменьшаем заголовки */
+    script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table .white_bold13,
+    script + br + div + br + br + div #aspnetForm > div + div + table .white_bold13,
+    table.tblGBSection + br + br + div #aspnetForm > div + div + table .white_bold13 {
+      font-size: 10px;
+    }
+
+    /* Уменьшаем типы игр */
+    script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table .h17,
+    script + br + div + br + br + div #aspnetForm > div + div + table .h17,
+    table.tblGBSection + br + br + div #aspnetForm > div + div + table .h17 {
+      font-size: 12px;
+    }
+  
+    /* Уменьшаем текст в таблице */
+    script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table > tbody > tr > td,
+    script + br + div + br + br + div #aspnetForm > div + div + table > tbody > tr > td,
+    table.tblGBSection + br + br + div #aspnetForm > div + div + table > tbody > tr > td,
+    script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table > tbody > tr > td td,
+    script + br + div + br + br + div #aspnetForm > div + div + table > tbody > tr > td td,
+    table.tblGBSection + br + br + div #aspnetForm > div + div + table > tbody > tr > td td {
+      font-size: 10px;
+    }
+
+    /* Оставляем только даты */
+    script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table > tbody > tr > td:nth-child(2),
+    script + br + div + br + br + div #aspnetForm > div + div + table > tbody > tr > td:nth-child(2),
+    table.tblGBSection + br + br + div #aspnetForm > div + div + table > tbody > tr > td:nth-child(2) {
+      font-size: 0px;
+    }
+    script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table > tbody > tr > td:nth-child(2) span:last-child,
+    script + br + div + br + br + div #aspnetForm > div + div + table > tbody > tr > td:nth-child(2) span:last-child,
+    table.tblGBSection + br + br + div #aspnetForm > div + div + table > tbody > tr > td:nth-child(2) span:last-child {
+      font-size: 10px;
+    }
+  
+    /* Разрешаем разрывать названия игр */
+    script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table > tbody > tr > td:nth-child(4),
+    script + br + div + br + br + div #aspnetForm > div + div + table > tbody > tr > td:nth-child(4),
+    table.tblGBSection + br + br + div #aspnetForm > div + div + table > tbody > tr > td:nth-child(4) {
+      word-break: break-all;
+    }
+  }
+  
+  /* Ширина таблицы "Участие в командах" и "История команды" */
+  script + table + div[style="padding-top: 10px;"] > table tr:nth-child(2) table #membershipContent table,
+  script + br + div + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table,
+  table.tblGBSection + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table {
+    table-layout: fixed;
+  }
+  script + table + div[style="padding-top: 10px;"] > table tr:nth-child(2) table #membershipContent table td,
+  script + br + div + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td,
+  table.tblGBSection + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td {
+    overflow: hidden;
+  }
+
+  /* --------------- */
+  /* Моё личное дело */
+  /* --------------- */
+
+  /* Переносы справа от аватарки в личном деле */
+  script + table > tbody > tr:nth-child(2) div.enPnl1 > table > tbody > tr > td:nth-child(2) {
+    white-space: normal;
+  }
+
+  /* Убираем отчерк под действием "Аттестация" в личном кабинете */
+  script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr > td.td_last {
+    background: none !important;
+  }
+
+  /* Фотографии в личном деле */
+  #EnTabContainer1_content_ctl00_panelLinePhotos_photosBlock_rowViewPortraits table {
+    width: initial !important;
+    margin: auto;
+  }
+  #EnTabContainer1_content_ctl00_panelLinePhotos_photosBlock_rowViewPortraits table td {
+    width: initial !important;
+    display: inline-block;
+  }
+  
+  /* Переносы на вкладке "Информация" */
+  script + table + div[style="padding-top: 10px;"] > table #aspnetForm table > tbody > tr > td {
+    white-space: normal;
+  }
+
+  /* Разрешаем переносить названия игр на вкладке "Cудейство" */
+  script + table + div[style="padding-top: 10px;"] > table #content > table.bg_light2 td:nth-child(4)[nowrap="nowrap"] {
+    white-space: normal;
+  }
+  
+  /* Разрешаем разрывать название домена на вкладке "Cудейство" */
+  script + table + div[style="padding-top: 10px;"] > table #content > table.bg_light2 td:nth-child(2) {
+    word-break: break-all;
+  }  
+
+  /* Скрываем даты на вкладке "Cудейство" */
+  @media (max-width: 479px) {
+    script + table + div[style="padding-top: 10px;"] > table #content > table.bg_light2 td:nth-child(1) {
+      display: none;
+    }
+  }
+  
+  /* Скрываем галерею */
+  script + table + div[style="padding-top: 10px;"] > table #tabItem3 {
+    display: none;
+  }  
+  
+  /* ----------- */
+  /* Моя команда */
+  /* ----------- */
+
+  /* Убираем недотянутуй отчерк справа в команде */
+  script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr > td.td_last,
+  script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr > td.td_last,
+  script + br + div[style="width:100%;"] + br + div + div + a + div + div + table + br + br + div table.enTab > tbody > tr > td.td_last {
+    display: none;
+  }
+
+  /* Форум в команде */
+  script + br + div[style="width:100%;"] + br,
+  script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"],
+  script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"] + div.hr,
+  script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"] + div.hr + div[style="height:10; width:1px;"],
+  script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"] + div.hr + div[style="height:10; width:1px;"] + table.tblGBSection,
+  script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"] + div.hr + div[style="height:10; width:1px;"] + table.tblGBSection + br,
+  a#enhlGBManage,
+  a#enhlGBManage + div.hr,
+  a#enhlGBManage + div.hr + div[style="height:10; width:1px;"],
+  a#enhlGBManage + div.hr + div[style="height:10; width:1px;"] + table.tblGBSection,
+  a#enhlGBManage + div.hr + div[style="height:10; width:1px;"] + table.tblGBSection + br {
+    display: none;
+  }
+  
+  /* Ниже селекторы */
+  /*   script + br + div[style="width:100%;"] + br + br + div */
+  /*   script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div */
+  /* сокращены до */
+  /*   script + br + div + br + br + div */
+  /*   table.tblGBSection + br + br + div */
+  
+  /* Переносы на вкладке "Состав команды" */
+  script + br + div + br + br + div #aspnetForm > table > tbody > tr > td,
+  table.tblGBSection + br + br + div #aspnetForm > table > tbody > tr > td,
+  table.tblGBSection + br + br + div #aspnetForm > a[name="invite"] table:last-child > tbody > tr > td {
+    white-space: normal;
+  }
+
+  /* Перенос имен */
+  /* → Капитан команды */
+  script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td + td,
+  table.tblGBSection + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td + td,
+  /* → Основной состав команды */
+  script + br + div + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td + td + td ,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td + td + td,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + br + span.Text4white + br + table td[height="21"] + td + td + td,
+  /* → Запасной состав команды */
+  script + br + div + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] + td + td + td,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] + td + td + td,
+  /* → Приглашенные в команду */
+  table.tblGBSection + br + br + div #aspnetForm > table + br + table td[height="21"] + td + td,
+  /* → Приглашение вступить в команду */
+  table.tblGBSection + br + br + div #aspnetForm > table + table:last-child td:nth-child(2),
+  table.tblGBSection + br + br + div #aspnetForm > a[name="invite"] table:last-child td:nth-child(2) {
+    width: 100%;
+    word-break: break-all;
+  }
+  
+  /* Звания */
+  @media (max-width: 479px) {
+    /* → Капитан команды */
+    script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td,
+    table.tblGBSection + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td,
+    /* → Основной состав команды */
+    script + br + div + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td,
+    table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td,
+    table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + br + span.Text4white + br + table td[height="21"] + td,
+    /* → Запасной состав команды */
+    script + br + div + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] + td,
+    table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] + td,
+    /* → Приглашенные в команду */
+    table.tblGBSection + br + br + div #aspnetForm > table + br + table td[height="21"] + td {
+      display: none;
+    }
+  }
+  
+  /* Пол */
+  @media (max-width: 479px) {
+    /* → Капитан команды */
+    script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td,
+    table.tblGBSection + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td,
+    /* → Основной состав команды */
+    script + br + div + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td + td,
+    table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td + td,
+    table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + br + span.Text4white + br + table td[height="21"] + td + td,
+    /* → Запасной состав команды */
+    script + br + div + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] + td + td,
+    table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] + td + td {
+      display: none;
+    }
+  }
+  
+  /* Перенос действий */
+  /* → Основной состав команды */
+  script + br + div + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td + td + td + td,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td + td + td + td,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + br + span.Text4white + br + table td[height="21"] + td + td + td + td,
+  /* → Запасной состав команды */
+  script + br + div + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] + td + td + td + td,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] + td + td + td + td,
+  /* → Приглашенные в команду */
+  table.tblGBSection + br + br + div #aspnetForm > table + br + table td[height="21"] + td + td + td + td {
+    white-space: nowrap;
+  }
+  
+  /* Приглашенные в команду → лишний столбец */
+  table.tblGBSection + br + br + div #aspnetForm > table + br + table td:last-child {
+    display: none;
+  }
+  
+  /* Компактный вариант действий */
+  @media (max-width: 479px) {
+    table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveFromTeam[href],
+    table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveInvitation[href] {
+      font-size: 0;
+    }
+    table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveFromTeam[href]::before,
+    table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveInvitation[href]::before {
+      content: 'x';
+      font-size: 12px;
+    }
+  }
+
+  /* Ширина последнего столбца */
+  /* → Основной состав команды */
+  script + br + div + br + br + div #aspnetForm > span.white_bold14 + br + table td:last-child,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + table td:last-child,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + br + span.Text4white + br + table td:last-child,
+  /* → Запасной состав команды */
+  script + br + div + br + br + div #aspnetForm > span.white_bold14 + table td:last-child,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + table td:last-child,
+  /* → Приглашенные в команду */
+  table.tblGBSection + br + br + div #aspnetForm > table + br + table td:last-child,
+  /* → Приглашение вступить в команду */
+  table.tblGBSection + br + br + div #aspnetForm > a[name="invite"] table:last-child td:last-child {
+    width: initial !important;
+  }
+
+  /* Команды в приглашениях */
+  table.tblGBSection + br + br + div #aspnetForm > div + div + br + span + div + table + div + br + br + span + table + br + table + table td[height="18"] + td {
+    width: 100%;
+  }  
+  table.tblGBSection + br + br + div #aspnetForm > div + div + br + span + div + table + div + br + br + span + table + br + table + table td[height="18"] + td + td + td + td {
+    width: initial !important;
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  /* Формы редактирование личного дела, регистрации и восстановления пароля */
+  /* ---------------------------------------------------------------------- */
+  
+  /* Переносы в названиях полей */
+  form[name="LoginInfoForm"] > div > div > table > tbody > tr > td,
+  form[name="PersonalDataBlockForm"] > div > div > table > tbody > tr > td,
+  form[name="ContactsBlockForm"] > div > div > table > tbody > tr > td,
+  form[name="TransportBlockForm"] > div > div > table > tbody > tr > td,
+  form[name="EquipmentBlockForm"] > div > div > table > tbody > tr > td,
+  form[name="LocationBlockForm"] > div > div > table > tbody > tr > td,
+  #changeSiteBlock_headerPanelLine_divContent + div > div > table > tbody > tr > td,
+  #subscriptionBlock_headerPanelLine_divContent + div > div > table > tbody > tr > td,
+  form[name="AdditionalInfoBlockForm"] > div > div > table > tbody > tr > td,
+  form[action="/SignUp.aspx"] > table > tbody > tr > td,
+  form[action="./ForgotPassword.aspx"] > table > tbody > tr > td > table > tbody > tr > td {
+    white-space: normal;
+  }
+  
+  /* Ширина блока с полем ввода и галочкой */
+  form[name="LoginInfoForm"] table.tblDelim,
+  form[name="PersonalDataBlockForm"] table.tblDelim,
+  form[name="ContactsBlockForm"] table.tblDelim,
+  form[name="TransportBlockForm"] table.tblDelim,
+  form[name="EquipmentBlockForm"] table.tblDelim,
+  form[name="LocationBlockForm"] table.tblDelim,
+  form[name="AdditionalInfoBlockForm"] table.tblDelim {
+    width: initial;
+  }
+
+  /* Ширина полей ввода */
+  form[name="LoginInfoForm"] input.textbox,
+  form[name="PersonalDataBlockForm"] input.textbox,
+  form[name="ContactsBlockForm"] input.textbox,
+  form[name="TransportBlockForm"] input.textbox,
+  form[name="TransportBlockForm"] select,
+  form[name="EquipmentBlockForm"] input.textbox,
+  form[name="LocationBlockForm"] input.textbox,
+  form[name="AdditionalInfoBlockForm"] input.textbox,
+  form[action="/SignUp.aspx"] input.textbox,
+  form[action="./ForgotPassword.aspx"] input.textbox,
+  form[action="./ForgotPassword.aspx"] select {
+    width: 140px !important;
+  }
+  
+  /* Регистрация → высота отбивки */
+  #RegistrationForm_lblPublicExplain + div.hr {
+    margin-top: -38px;
+  }
+  
+  /* Регистрация → кнопка "Проверить" */
+  form[action="/SignUp.aspx"] > table > tbody > tr:nth-child(3) td:nth-child(2),
+  form[action="/SignUp.aspx"] > table > tbody > tr:nth-child(3) td:nth-child(3) {
+    display: inline-block;
+    width: initial !important;
+  }
+
+  /* Регистрация → код страны */
+  form[action="/SignUp.aspx"] > table > tbody > tr:nth-child(6) table td {
+    display: inline-block;
+  }  
+  form[action="/SignUp.aspx"] > table > tbody > tr:nth-child(6) table {
+    border-spacing: 0px;
+  }
+
+  /* Восстановление пароля → код страны */
+  form[action="./ForgotPassword.aspx"] > table table > tbody > tr:nth-child(4) table td {
+    display: inline-block;
+  }
+  form[action="./ForgotPassword.aspx"] > table table > tbody > tr:nth-child(4) table td:nth-child(1) {
+    width: initial !important;
+  }
+  form[action="./ForgotPassword.aspx"] > table table > tbody > tr:nth-child(4) table td:nth-child(2) {
+    padding-left: 0px !important;
+  }
+  form[action="./ForgotPassword.aspx"] > table table > tbody > tr:nth-child(4) div[style="width:150px;"] {
+    width: initial !important;
+  }
+  
+  /* Регистрация → войти через соц.сеть */
+  .formmain .login-through a {
+    margin-bottom: 14px;
+  }
+  .formmain .login-through .vkontakte {
+    margin-right: 6px;
+  }
+  .formmain .login-through .facebook {
+    margin-left: 0px;
+  }
+  .formmain .login-through {
+    height: initial;
+    text-align: center;
+  }
+  
+  /* Редактировании блока "Информация для авторизации" → кнопка "Проверить" */
+  #AuthorizationInfoBlock_LoginEditTbl td {
+    display: inline-block;
+  }
+
+  /* Форматирование полей ввода и галочек */
+  form[name="PersonalDataBlockForm"] table.tblDelim td:nth-child(1) {
+    width: 160px;
+  }
+  form[name="PersonalDataBlockForm"] table.tblDelim td:nth-child(2) {
+    width: initial;
+  }
+  
+  /* Редактировании блока "Информация для авторизации" → код страны */
+  form[name="ContactsBlockForm"] table.tblDelim td[width="45px"],
+  form[name="ContactsBlockForm"] table.tblDelim td[width="45px"] + td {
+    display: inline-block;
+  }
+  form[name="ContactsBlockForm"] table.tblDelim td[width="45px"] {
+    width: initial !important;
+  }
+  
+  /* Редактировании блока "Транспорт" → рамка вокруг select-ов */
+  form[name="TransportBlockForm"] div.enPnl1[style="width:197px;"] {
+    width: 140px !important;
+  }
+
+  /* Редактировании блока "Транспорт" → Гос. номер, имя */
+  form[name="TransportBlockForm"] input[name="RegistrationNumber"] {
+    float: left;
+  }
+
+  /* Редактировании блока "Транспорт" → Текст "Изменение фотографии" */
+  form[name="TransportBlockForm"] #TransportBlock_AutomobileModelsRow + tr + tr td[width="150"] {
+    width: 0px !important;
+  }
+  form[name="TransportBlockForm"] #TransportBlock_AutomobileModelsRow + tr + tr td[width="150"] + td table {
+    width: 100%;
+  }
+
+  /* Редактировании блока "Транспорт" → загрузка файла */
+  form[name="TransportBlockForm"] #TransportBlock_TrImgUploadBtnRow div[style="width:500px;"] {
+    width: initial !important;
+  }
+  form[name="TransportBlockForm"] #TransportBlock_TrImgUploadBtnRow input[type="file"] {
+    width: 100% !important;
+  }
+  
+  /* Редактировании блока "Фотографии" → загрузка файла */
+  #PhotosBlock_headerPanelLine_divContent + div form div[style="width:500px;"] {
+    width: initial !important;
+  }
+  #PhotosBlock_headerPanelLine_divContent + div form input[type="file"] {
+    width: 100% !important;
+  }
+  
+  /* Загрузка гимна и флага команды → делаем тянущимися поля загрузки файлов */
+  form[name="MainForm"] > table > tbody > tr > td > div[style="width:500px;"] {
+    width: initial !important;
+  }
+  form[name="MainForm"] > table > tbody > tr > td > div[style="width:500px;"] input[type="file"] {
+    width: 100% !important;
+  }
+
+  /* Загрузка гимна и флага команды → убираем лишние отступы по краям флага */
+  form[name="MainForm"] > table > tbody > tr > td[style="padding: 10px 33px;"] {
+    padding: 10px 0px !important;
+  }
+  
+  /* Редактировании блока "Места обитания" → текстовые поля */
+  form[name="LocationBlockForm"] div[style="width:402px;"] {
+    width: initial !important;
+  }
+  form[name="LocationBlockForm"] textarea {
+    width: 240px !important;
+  }
+  
+  /* Редактировании блока "Места обитания" → раскладка для широких полей */
+  @media (max-width: 767px) {
+    form[name="LocationBlockForm"] > div > div > table > tbody > tr > td {
+      display: block;
+      width: initial !important;
+      text-align: center;
+    }
+    form[name="LocationBlockForm"] > div > div > table > tbody > tr > td > table.tblDelim {
+      margin: auto;
+    }
+  }
+  
+  /* Редактировании блока "Подписка" → кнопка "Добавить" */
+  #subscriptionBlock_headerPanelLine_divContent + div > div > form > table > tbody > tr > td:nth-child(2),
+  #subscriptionBlock_headerPanelLine_divContent + div > div > form > table > tbody > tr > td:nth-child(3) {
+    float: left;
+  }
+  #subscriptionBlock_headerPanelLine_divContent + div > div > form > table {
+    margin: auto;
+  }
+  
+  /* Редактировании блока "Подписка" → флажки */
+  #subscriptionBlock_headerPanelLine_divContent + div > div > form > div.fl {
+    float: none;
+    display: inline;
+  }
+  #subscriptionBlock_headerPanelLine_divContent + div > div > form > div.fl + div {
+    float: none !important;
+    display: inline;
+    line-height: 18px;
+    vertical-align: top;
+  }
+  
+  /* Редактировании блока "Дополнительная информация" → раскладка для широких полей */
+  @media (max-width: 767px) {
+    form[name="AdditionalInfoBlockForm"] > div > div > table > tbody > tr > td {
+      display: block;
+      width: initial !important;
+      text-align: center;
+    }
+    form[name="AdditionalInfoBlockForm"] > div > div > table > tbody > tr > td > div.enPnl1 {
+      margin: auto;
+    }
+  }
+
+  /* ---------- */
+  /* Мой баланс */
+  /* ---------- */
+  
+  /* Перенос заголовка и текста внутри */
+  .padT5 .padT5.padL10.padR10 td.h18[nowrap="nowrap"],
+  .padT5 .padT5.padL10.padR10 td.h18[nowrap="nowrap"] + td {
+    display: inline-block;
+  }
+  .padT5 .padT5.padL10.padR10 td.h18[nowrap="nowrap"] {
+    white-space: normal;
+  }
+  
+  /* ----- */
+  /* Форум */
+  /* ----- */
+
+  /* Перенос времени сообщения и домена на новую строку */
+  .msgHead .gbUserInfo .nowrap {
+    white-space: normal;
+  }
+
+  /* Исправлен перенос текста сообщения */
+  .msgHead .gbMessage {
+    clear: both;
+  }
+  
+  /* На мобильных: */
+  @media (max-width: 767px) {
+    /* Скрываем хлебные крошки */
+    #tdContentCenter > table:first-child > tbody > tr:first-child > td:first-child > table:first-child > tbody > tr:nth-child(1) > td:nth-child(1) .Text9,
+    #tdContentCenter > table:first-child > tbody > tr:first-child > td:first-child > table:first-child > tbody > tr:nth-child(1) > td:nth-child(2)[width="10"] {
+      display: none;
+    }
+
+    /* Скрываем домен, владельца и показ аваторок */
+    #tdContentCenter > table:first-child > tbody > tr:first-child > td:first-child > table:first-child + table > tbody > tr:nth-child(1) > td:nth-child(1) b,
+    #tdContentCenter > table:first-child > tbody > tr:first-child > td:first-child > table:first-child + table > tbody > tr:nth-child(1) > td:nth-child(2)[align="right"] {
+      display: none;
+    }
+
+    /* Скрываем модераторов форума */
+    #tdContentCenter > table:first-child > tbody > tr:first-child > td:first-child > table:first-child + table + span[class="Text5"] {
+      display: none;
+    }
+  }
+  
+  /* -------------------------- */
+  /* Список участников и команд */
+  /* -------------------------- */
+
+  /* Разрешаем переносы панели сортировки */
+  h1 + br + #MainForm[class="noPadMarg"]> table:nth-child(3) td[nowrap="nowrap"] {
+    white-space: normal;
+  }
+  
+  /* Разрешаем переносы и убираем ширину во весь экран */
+  h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td {
+    white-space: normal;
+    width: initial !important;
+  }
+
+  /* На планшетах */
+  @media (max-width: 767px) {
+    /* Убрали даты регистрации и активность участников */
+    h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td:nth-child(6),
+    h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td:nth-child(8) {
+      display: none;
+    }
+  
+    /* Разрешаем разрывать ники участников */
+    h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td:nth-child(5) {
+      word-break: break-all;
+    }
+  }
+  
+  /* На мобилах */
+  @media (max-width: 479px) {
+    /* Разбираем таблицу */
+    h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td {
+      display: inline-block;
+      padding-left: 0px !important;
+      word-break: initial;
+    }
+  }  
+
+  /* ------------ */
+  /* Кнопка вверх */
+  /* ------------ */
+  #up.fixed {
+    position: fixed;
+    left: 7%;
+    top: 85%
+  }
+  #up.default {
+    display:none;
+  }
+  #up img {
+    height: 75px;
+    width: 50px;
+    -moz-transition: all 0.4s; 
+    -webkit-transition: all 0.4s;  
+    -ms-transition: all 0.4s;  
+    -o-transition: all 0.4s;  
+    transition: all 0.4s; 
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+  }
+  #up img:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+
+  /* -------- */
+  /* REdesign */
+  /* -------- */
+  
+  /* Исправляем равнение шапки */
+  #tdLogoRight {
+    text-align: left;
+  }
+  
+  /* Ширина изображения в шапке */
+  .re-header-image img {
+    width: 100%;
+  }
+
+  /* Два варианта шапки для ПК и мобил */
+  .re-header-image .logo-desktop {
+    display: none;
+  }
+  .re-header-image .logo-mobile {
+    display: block;
+  }
+  @media (min-width: 768px) {
+    .re-header-image .logo-desktop {
+      display: block;
+    }
+    .re-header-image .logo-mobile {
+      display: none;
+    }
+  }
+
+  /* Ссылки "Поделиться" под статьей */
+  .re-game-share {
+    margin-top: 7px;
+  }
+  .re-game-share .re-game-share-label {
+    float: left;
+    line-height: 17px;
+    margin-right: 4px;
+  }
+  
+  /* Наши друзья и ссылки на соц.сети */
+  .re-friends, .re-social {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .re-social a {
+    margin: 0px 4px;
+  }
+  .re-friends img {
+    width: 152px;
+    border-radius: 5px;
+    margin: 0 auto 10px auto;
+  }
+  @media (max-width: 767px) {
+    .re-friends,
+    .re-social {
+      display: none;
+    }
+  }
+  <!--
+--></style>
+<script type="text/javascript" src="http://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script type="text/javascript" src="http://yastatic.net/share2/share.js"></script>
+<script type="text/javascript" src="http://world.en.cx/js/v2/jQuery/jquery.cookie.js?ver=1.43.2.1"></script>
+<script type="text/javascript">// <![CDATA[
+  /* ----------------------------- */
+  /* Поддержка мобильных устройств */
+  /* ----------------------------- */
+
+  var metaTag=document.createElement('meta');
+  metaTag.name = "viewport";
+  metaTag.content = "width=device-width, initial-scale=1";
+  document.getElementsByTagName('head')[0].appendChild(metaTag);
+
+  /* --------------------------------- */
+  /* Отключение мобильной версии сайта */
+  /* --------------------------------- */
+
+  /* Реализация из кнопки "Полная версия" с m.domain_name */
+  /* for nginx - if we don't set cookie 'mobile' to '0', */
+  /* nginx will redirect mobile browsers from [domain_name] to m.[domain_name] */
+  function mainSite() {
+    var cookieDomain = document.location.host;
+    var wwwPrefix = 'www.';
+    if(cookieDomain.indexOf(wwwPrefix) == 0) {
+      cookieDomain = cookieDomain.substr(wwwPrefix.length());
+    }
+    if (cookieDomain.indexOf('.') >= 0) {
+      cookieDomain = cookieDomain.indexOf("m.") == 0 ? cookieDomain.substr(1) : "." + cookieDomain;
+    }
+    $.cookie('mobile', '0', { path: "/", domain: cookieDomain });
+  }
+
+  /* Перенаправляем на нормальный сайт, чтобы избежать перехода в мобильную версию движка по кнопке "Вход в игру" */
+  function mainSiteOptionalRedirect() {
+    var domain = document.location.host;
+    if (domain.indexOf("m.") == 0) {
+      document.location.host = domain.substr(2);
+    }
+  }
+
+  mainSite();
+  mainSiteOptionalRedirect();
+  
+  /* ------------------------------------- */
+  /* Кнопки поделиться под заголовком игры */
+  /* ------------------------------------- */
+
+  $(document).ready(function() {
+    $('a#lnkGameTitle').each(function(){
+      var title = $(this).text();
+      var url = 'http://' + location.hostname + $(this).attr('href');
+      var container = $(
+        '<div class="re-game-share">' +
+          '<div class="re-game-share-label">Поделиться: </div>' +
+          '<div class="re-game-share-placeholder"></div>' +
+        '</div>'
+      ).insertAfter($(this).closest('table'));
+      var placeholder = $('.re-game-share-placeholder', container).get(0);
+      Ya.share2(placeholder, {
+        theme: {
+          services: 'vkontakte,facebook,telegram,viber,whatsapp,odnoklassniki',
+          size: 's'
+        },
+        content: {
+          title: title,
+          url: url
+        },
+        hooks: {
+          onready: function () {
+            var link = $('.ya-share2__item_service_telegram a', placeholder);
+            var href = 'tg://msg_url?url=' + encodeURIComponent(url) +
+              '&text=' + encodeURIComponent(title) +
+              '&utm_source=share2';
+            link
+              .attr('href', href)
+              .removeAttr('target');
+          }
+        }
+      });
+    });
+  });
+  
+  /* ---------------------- */
+  /* Соц.сети и наши друзья */
+  /* ---------------------- */
+
+  $(document).ready(function() {
+    var social = 
+      '<div class="re-social">' +
+        '<a title="Instagram" href="https://www.instagram.com/encounter74/" target="_blank">' +
+          '<img alt="" width="28" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KCS5zdDF7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT48Zz48cmFkaWFsR3JhZGllbnQgY3g9IjIyNS40NzM3IiBjeT0iMjIyLjgwNDYiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMTQuMjE3NSAwIDAgMTQuMjE3MSAtMzA1NS43MDM5IC0yNjE1Ljk5NTgpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9IlNWR0lEXzFfIiByPSI0Ny43MjEyIj48c3RvcCBvZmZzZXQ9IjkuNjkzODgwZS0wMiIgc3R5bGU9InN0b3AtY29sb3I6I0ZGRDg3QSIvPjxzdG9wIG9mZnNldD0iMC4xNDI2IiBzdHlsZT0ic3RvcC1jb2xvcjojRkNDRTc4Ii8+PHN0b3Agb2Zmc2V0PSIwLjIyNjMiIHN0eWxlPSJzdG9wLWNvbG9yOiNGNUI0NzEiLz48c3RvcCBvZmZzZXQ9IjAuMzM3OCIgc3R5bGU9InN0b3AtY29sb3I6I0VCOEQ2NSIvPjxzdG9wIG9mZnNldD0iMC40NDkiIHN0eWxlPSJzdG9wLWNvbG9yOiNFMzYwNTgiLz48c3RvcCBvZmZzZXQ9IjAuNjc4NiIgc3R5bGU9InN0b3AtY29sb3I6I0NEMzY5NCIvPjxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzY2NjhCMCIvPjwvcmFkaWFsR3JhZGllbnQ+PHBhdGggY2xhc3M9InN0MCIgZD0iTTUxMiwzOTUuMWMwLDY0LjYtNTIuMywxMTYuOS0xMTYuOSwxMTYuOUgxMTYuOUM1Mi4zLDUxMiwwLDQ1OS43LDAsMzk1LjFWMTE3QzAsNTIuNCw1Mi40LDAsMTE3LDBoMjc2LjMgICBDNDU4LjksMCw1MTIsNTMuMSw1MTIsMTE4LjdWMzk1LjF6Ii8+PGc+PHBhdGggY2xhc3M9InN0MSIgZD0iTTMyNy4yLDcwLjZIMTg0LjhjLTYzLjEsMC0xMTQuMyw1MS4yLTExNC4zLDExNC4zdjE0Mi4zYzAsNjMuMSw1MS4xLDExNC4yLDExNC4zLDExNC4yaDE0Mi4zICAgIGM2My4xLDAsMTE0LjItNTEuMSwxMTQuMi0xMTQuMlYxODQuOUM0NDEuNCwxMjEuNywzOTAuMyw3MC42LDMyNy4yLDcwLjZ6IE00MDUuOCwzMTMuNWMwLDUxLTQxLjMsOTIuMy05Mi4zLDkyLjNoLTExNSAgICBjLTUxLDAtOTIuMy00MS4zLTkyLjMtOTIuM3YtMTE1YzAtNTEsNDEuMy05Mi4zLDkyLjMtOTIuM2gxMTVjNTEsMCw5Mi4zLDQxLjQsOTIuMyw5Mi4zVjMxMy41eiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0yNjEsMTU5Yy01NCwwLTk3LjcsNDMuNy05Ny43LDk3LjdjMCw1My45LDQzLjcsOTcuNyw5Ny43LDk3LjdjNTMuOSwwLDk3LjctNDMuNyw5Ny43LTk3LjcgICAgQzM1OC42LDIwMi43LDMxNC45LDE1OSwyNjEsMTU5eiBNMjYxLDMxNS40Yy0zMi41LDAtNTguOC0yNi4zLTU4LjgtNTguOGMwLTMyLjUsMjYuMy01OC44LDU4LjgtNTguOGMzMi40LDAsNTguOCwyNi4zLDU4LjgsNTguOCAgICBDMzE5LjcsMjg5LjEsMjkzLjQsMzE1LjQsMjYxLDMxNS40eiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0zNzYuNywxNTcuNWMwLDEzLjctMTEuMSwyNC44LTI0LjgsMjQuOGMtMTMuNywwLTI0LjgtMTEuMS0yNC44LTI0LjhjMC0xMy43LDExLjEtMjQuOSwyNC44LTI0LjkgICAgQzM2NS42LDEzMi42LDM3Ni43LDE0My43LDM3Ni43LDE1Ny41eiIvPjwvZz48L2c+PC9zdmc+">' +
+        '</a>' +
+        '<a title="Telegram" href="tg://resolve?domain=encounter74">' +
+          '<img alt="" width="28" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiM1RUJFRTE7fQoJLnN0MXtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01MTIsMzk3LjFjMCw2My41LTUxLjUsMTE0LjktMTE0LjksMTE0LjlIMTE0LjlDNTEuNSw1MTIsMCw0NjAuNSwwLDM5Ny4xVjExNC45QzAsNTEuNSw1MS41LDAsMTE0LjksMGgyODIuMiAgIEM0NjAuNSwwLDUxMiw1MS41LDUxMiwxMTQuOVYzOTcuMXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMzgzLjEsMTM0LjFMMTE2LjMsMjM4Yy04LjYsMy40LTguMSwxNS44LDAuOCwxOC40bDY3LjgsMjBsMjUuMyw4MC4zYzIuNiw4LjQsMTMuMywxMC45LDE5LjQsNC42bDM1LjEtMzUuOCAgIGw2OC44LDUwLjVjOC40LDYuMiwyMC40LDEuNiwyMi41LTguNmw0NS41LTIxNy44QzQwMy44LDEzOSwzOTMuMywxMzAuMSwzODMuMSwxMzQuMUwzODMuMSwxMzQuMUwzODMuMSwxMzQuMXogTTM0OS43LDE4Mi40ICAgTDIyNS44LDI5MmMtMS4yLDEuMS0yLDIuNi0yLjIsNC4ybC00LjgsNDIuNGMtMC4yLDEuNC0yLjEsMS42LTIuNSwwLjJsLTE5LjYtNjMuM2MtMC45LTIuOSwwLjMtNiwyLjktNy42bDE0Ni4zLTkwLjggICBDMzQ5LjIsMTc1LjIsMzUyLjcsMTc5LjgsMzQ5LjcsMTgyLjRMMzQ5LjcsMTgyLjRMMzQ5LjcsMTgyLjR6Ii8+PC9nPjwvc3ZnPg==">' +
+        '</a>' +
+        '<a title="ВКонтакте" href="http://vk.com/encounter74" target="_blank">' +
+          '<img alt="" width="28" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiM2NzhBQUY7fQoJLnN0MXtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01MTIsMzk3LjFjMCw2My41LTUxLjUsMTE0LjktMTE0LjksMTE0LjlIMTE0LjlDNTEuNSw1MTIsMCw0NjAuNSwwLDM5Ny4xVjExNC45QzAsNTEuNSw1MS41LDAsMTE0LjksMGgyODIuMiAgIEM0NjAuNSwwLDUxMiw1MS41LDUxMiwxMTQuOVYzOTcuMXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjUyLjUsMzQ5LjRoMTkuN2MwLDAsNi0wLjcsOS0zLjljMi44LTMsMi43LTguNywyLjctOC43cy0wLjQtMjYuNSwxMS45LTMwLjRjMTIuMS0zLjksMjcuNywyNS42LDQ0LjIsMzYuOSAgIGMxMi41LDguNiwyMiw2LjcsMjIsNi43bDQ0LjEtMC42YzAsMCwyMy4xLTEuNCwxMi4xLTE5LjZjLTAuOS0xLjUtNi40LTEzLjQtMzIuOC0zNy45Yy0yNy42LTI1LjYtMjMuOS0yMS41LDkuNC02NS45ICAgYzIwLjMtMjcsMjguNC00My41LDI1LjktNTAuNmMtMi40LTYuNy0xNy4zLTQuOS0xNy4zLTQuOWwtNDkuNywwLjNjMCwwLTMuNy0wLjUtNi40LDEuMWMtMi43LDEuNi00LjQsNS4zLTQuNCw1LjMgICBzLTcuOSwyMC45LTE4LjQsMzguN2MtMjIuMSwzNy42LTMwLjksMzkuNS0zNC42LDM3LjJjLTguNC01LjUtNi4zLTIxLjgtNi4zLTMzLjVjMC0zNi40LDUuNS01MS41LTEwLjgtNTUuNSAgIGMtNS40LTEuMy05LjQtMi4yLTIzLjItMi4zYy0xNy43LTAuMi0zMi43LDAuMS00MS4yLDQuMmMtNS42LDIuOC0xMCw4LjktNy40LDkuM2MzLjMsMC40LDEwLjcsMiwxNC43LDcuNCAgIGM1LjEsNi45LDQuOSwyMi41LDQuOSwyMi41czIuOSw0Mi44LTYuOCw0OC4yYy02LjcsMy43LTE1LjktMy44LTM1LjYtMzcuOWMtMTAuMS0xNy40LTE3LjctMzYuNy0xNy43LTM2LjdzLTEuNS0zLjYtNC4xLTUuNSAgIGMtMy4yLTIuMy03LjYtMy4xLTcuNi0zLjFsLTQ3LjIsMC4zYzAsMC03LjEsMC4yLTkuNywzLjNjLTIuMywyLjctMC4yLDguNC0wLjIsOC40czM2LjksODYuNCw3OC44LDEzMCAgIEMyMDguOSwzNTIsMjUyLjUsMzQ5LjQsMjUyLjUsMzQ5LjRMMjUyLjUsMzQ5LjRMMjUyLjUsMzQ5LjR6Ii8+PC9nPjwvc3ZnPg==">' +
+        '</a>' +
+      '</div>';
+    var friends =
+      '<div class="re-friends enPnl1 border_rad5 pnGr">' +
+        '<h3>Наши друзья</h3>' +
+        '<p>' +
+          '<a href="https://vk.com/rallydozor" target="_blank">' +
+            '<img src="http://d1.endata.cx/images/personal/85473/rally.jpg" alt="">' +
+          '</a>' +
+        '</p>' +
+      '</div>';
+  
+    $('#boxOnlineHelp').after(social + friends);
+    $('.re-social-placeholder').html(social);
+  });
+
+  /* ------------ */
+  /* Описания игр */
+  /* ------------ */
+  
+  $(document).ready(function() {
+
+    /* Скрытие лишних поля */
+    $(
+      /* Список игр: */
+      ".gameInfo > tbody > tr > td > table span:contains('Играем:')," +
+      ".gameInfo > tbody > tr > td > table span:contains('Последовательность прохождения:')," +
+      ".gameInfo > tbody > tr > td > table span:contains('Минимальный пробег:')," +
+      ".gameInfo > tbody > tr > td > table span:contains('Начало игры в вашей временной зоне:')," +
+      ".gameInfo > tbody > tr > td > table span:contains('Время окончания:')," +
+      ".gameInfo > tbody > tr > td > table span:contains('Времени осталось:')," +
+      ".gameInfo > tbody > tr > td > table span:contains('Подтверждения принимаются до:')," +
+      /* Информация об игре: */
+      "h1 + .gameInfo span:contains('Начало игры в вашей временной зоне:')," +
+      "h1 + .gameInfo span:contains('Время окончания:')," +
+      "h1 + .gameInfo span:contains('Времени осталось:')," +
+      "h1 + .gameInfo span:contains('Призовой фонд:')"
+    ).closest("tr").addClass('re-unused-game-info');
+    $(".gameInfo").addClass('re-game-info');
+
+    /* Упрощаем формат записи времени начала игры */
+    $(
+      ".gameInfo > tbody > tr > td > table span:contains('Начало игры:') + span," +
+      "h1 + .gameInfo span:contains('Начало игры:') + span"
+    ).each(function(){
+      var text = $(this).text();
+      var datetime = text.split('(')[0];
+      $(this).text(datetime.substring(0, datetime.length - 4));
+    });
+
+  });
+  
+  /* ------------ */
+  /* Кнопка вверх */
+  /* ------------ */
+  
+  var upTimeout;
+  function uparrow() {
+    var scrollTop =  Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+    if(scrollTop > 0) {
+      window.scrollBy(0, -100);
+      upTimeout = setTimeout('uparrow()', 20);
+    } else {
+      clearTimeout(upTimeout);
+    }
+    return false;
+  }
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    window.onscroll = function() {
+      var up = document.getElementById("up");
+      var scrollTop =  Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (scrollTop > 1000 && up.className == "default") {
+        up.className = "fixed";
+      } else if(scrollTop <= 1000 && up.className == "fixed") {
+        up.className = "default";
+      }
+    };
+  });
+
+  /* -------------- */
+  /* Состав команды */
+  /* -------------- */
+
+  $(document).ready(function() {
+    /* Исправление невозможности переноса имени пользователя, содержащего Hangul Jungseong Filler */
+    $("#aspnetForm a:contains('\u1160')").each(function(){
+      var text = $(this).text();
+      $(this).text(text.replace(new RegExp('\u1160', 'g'), '\u00A0'));
+    });
+  
+    /* Устанавливаем классы для поиска таблиц пользователей */
+    $("#aspnetForm span.white_bold14:contains('Капитан команды')").nextAll('table').first().addClass('re-team-lead');
+    $("#aspnetForm span.white_bold14:contains('Основной состав команды')").nextAll('table').first().addClass('re-team-active');
+    $("#aspnetForm span.white_bold14:contains('Запасной состав команды')").nextAll('table').first().addClass('re-team-reserved');
+    $("#aspnetForm span.white_bold14:contains('Приглашенные в команду')").parents('table').first().addClass('re-team-invited');
+    $("#aspnetForm span.white_bold14:contains('Приглашение вступить в команду:')").parents('table').first().addClass('re-team-invites');
+  
+  });
+  
+  /* -------------------------------- */
+  /* Скрываем возможнсть отправки SMS */
+  /* -------------------------------- */
+
+  $(document).ready(function() {
+    /* Отправить SMS сообщение членам команды */
+    $('#lnkSendSmsMessageToMembers').closest('tr').hide();
+  
+    /* Отправить SMS из личного дела */
+    var send = $('#enUserDetailsPanel_lnkSendSms').closest('td');
+    $('#enUserDetailsPanel_lnkSendSms').remove();
+
+    /* Убираем лишний разделитель в тексте */
+    if (send.length) {
+      send.html(send.html().replace(/\|\s+\|/g, "|"));
+    }
+  });
+// ]]></script>
+<div class="re-header">
+<div class="re-header-image"><a href="/Default.aspx"><img class="logo-desktop" src="http://d1.endata.cx/images/personal/85473/logo-desktop.jpg" alt="Городские игры" /><img class="logo-mobile" src="http://d1.endata.cx/images/personal/85473/logo-mobile.jpg" alt="Городские игры" /></a></div>
+</div>
+<div class="default" id="up"><img onclick="return uparrow()" src="http://d1.endata.cx/images/personal/1454107/strelka.png" alt="" /></div>
