@@ -40,19 +40,19 @@
   }
 
   /* Два варианта шапки для ПК и мобил */
-    .re-header-image .logo-desktop {
-      display: block;
-    }
-    .re-header-image .logo-mobile {
-      display: none;
-    }
-  @media (max-width: 767px) {
   .re-header-image .logo-desktop {
-    display: none;
-  }
-  .re-header-image .logo-mobile {
     display: block;
   }
+  .re-header-image .logo-mobile {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    .re-header-image .logo-desktop {
+      display: none;
+    }
+    .re-header-image .logo-mobile {
+      display: block;
+    }
   }
 
   /* Ссылки "Поделиться" под статьей */
@@ -144,29 +144,29 @@
   /* -------------------------------------- */
   
   @media (max-width: 767px) {
-  /* Переносим левую панель в начало страницы */
-  #tdContentLeft {
-    display: inline-block;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-  }
-  #tdContentLeft > div {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-  #tdContentLeft > div.spacer {
-    display: none;
-  }
-  #tdContentCenter {
-    display: inline-block;
-    width: 100%;
-  }
-  .userAdItem {
-    width: 100%;
-    text-align: center;
-  }
+    /* Переносим левую панель в начало страницы */
+    #tdContentLeft {
+      display: inline-block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+    #tdContentLeft > div {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+    #tdContentLeft > div.spacer {
+      display: none;
+    }
+    #tdContentCenter {
+      display: inline-block;
+      width: 100%;
+    }
+    .userAdItem {
+      width: 100%;
+      text-align: center;
+    }
   }
   
   /* ----------------------------------------------------------------- */
@@ -175,15 +175,15 @@
 
   /* Разделяем заголовок игры на несколько строк */
   @media (max-width: 767px) {
-  #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
-  .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td {
-    display: inline-block;
-    padding-bottom: 5px;
-  }
-  #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h,
-  .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h {
-    padding-left: 0;
-  }
+    #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
+    .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td {
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h,
+    .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h {
+      padding-left: 0;
+    }
   }
   
   /* ---------- */
