@@ -3,14 +3,17 @@
 body {
   min-width: initial;
 }
+
 /* Исправляем отступ под кнопки справа в шапке */
 .header {
   padding-right: 445px;
 }
+
 /* Отключаем форум */
 .header li.discuss {
   display: none;
 }
+
 /* На малых размерх экрана: */
 @media (max-width: 767px) {
   /* Изменяем раскладку шапки */
@@ -20,15 +23,18 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
+
   .header .logo {
     display: block;
     max-width: 37px;
   }
+
   .header .logo img {
     width: 37px;
     height: 37px;
     position: initial;
   }
+
   .header .gametype {
     float: left;
     display: block;
@@ -36,6 +42,7 @@ body {
     margin-right: 8px;
     position: initial;
   }
+
   .header h1 {
     border-top: 1px dashed #414141;
     font-size: 1.5em;
@@ -44,29 +51,36 @@ body {
     height: initial;
     display: block;
   }
+
   .header ul {
     right: 10px;
     top: 0;
     height: 40px;
     margin-top: 0;
   }
+
   .header li {
     width: 50px;
     height: 100%;
     background-position-y: 6px !important;
   }
+
   .header li a {
     height: 100%;
   }
+
   .header li span {
     display: none;
   }
+
   .header .refresh {
     background-position-x: 10px;
   }
+
   .header .stats {
     background-position-x: -76px;
   }
+
   .header .discuss {
     background-position-x: -240px;
   }
@@ -88,10 +102,12 @@ body {
     width: initial;
     float: none;
   }
+
   #this.pane {
     max-height: 55px;
     margin-bottom: 0;
   }
+
   .content {
     margin-left: 0;
   }
@@ -99,7 +115,7 @@ body {
 </style>
 <script type="text/javascript">
   /* Отключаем попытки мобильного браузера показывать страницу больше, чем она есть */
-  var metaTag=document.createElement('meta');
+  var metaTag = document.createElement('meta');
   metaTag.name = "viewport";
   metaTag.content = "width=device-width, initial-scale=1";
   document.getElementsByTagName('head')[0].appendChild(metaTag);
