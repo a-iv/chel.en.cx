@@ -5,6 +5,14 @@
     display: none;
   }
 
+  /* Отображаем вступительное слово только вместо штатного */
+  #boxCenterContent {
+    display: none;
+  }
+  #boxCenterIntro + #boxCenterContent {
+    display: block;
+  }
+
   /* Раскладка текста по столбцам */
   .re-intro-column {
     float: left;
