@@ -249,9 +249,12 @@
   }
 
   /* Добавляем отчерк на строку таблицы */
-  @media (min-width: 992px) {
+  .enMailTab > tbody > tr {
+    background: url("http://cdn.endata.cx/images/tab/EnMail/freeBg.gif") repeat-x bottom;
+  }
+  @media (max-width: 991px) {
     .enMailTab > tbody > tr {
-      background: url("http://cdn.endata.cx/images/tab/EnMail/freeBg.gif") repeat-x bottom;
+      background: none;
     }
   }
 
