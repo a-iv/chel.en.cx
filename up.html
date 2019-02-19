@@ -4,6 +4,8 @@
   /* Цветовая схема */
   /* -------------- */
 
+  /* Этот раздел содержит изменения в фоне сайта и ни как не влияет на адаптивность сайта */
+
   /* Фон */
   body {
     background-image: url("http://d1.endata.cx/images/personal/85473/texture-brick-green.jpg");
@@ -29,17 +31,14 @@
   /* REdesign */
   /* -------- */
 
-  /* Исправляем равнение шапки */
-  #tdLogoRight {
-    text-align: left;
-  }
+  /* Этот раздел содержит описание новых элементов добавленных на chel.en.cx и не должен влиять на адаптивность сайта */
 
   /* Ширина изображения в шапке */
   .re-header-image img {
     width: 100%;
   }
 
-  /* Два варианта шапки для ПК и мобил */
+  /* Два варианта шапки для ПК и мобильных устройств */
   .re-header-image .logo-desktop {
     display: block;
   }
@@ -69,7 +68,8 @@
     margin-right: 4px;
   }
 
-  /* Наши друзья и ссылки на соц.сети */
+  /* Раздел "Наши друзья" и ссылки на социальные сети */
+  /* Добавляется в левую колонку с помощью javascript ниже */
   .re-friends, .re-social {
     text-align: center;
     margin-top: 10px;
@@ -85,9 +85,11 @@
     margin: 0 auto 10px auto;
   }
 
+  /* На мобильный устройствах: */
   @media (max-width: 767px) {
-    .re-friends,
-    .re-social {
+    .re-friends, /* "Наши друзья" не отображаются */
+    .re-social /* Социальные сети отображаются в подвале сайта (см. bottom.html) */
+    {
       display: none;
     }
   }
@@ -95,6 +97,12 @@
   /* ------------------------ */
   /* Скрываем лишние элементы */
   /* ------------------------ */
+
+  /* Скрытые здесь элементы кажутся нам лишними и не соответствуют задачам, */
+  /* для которых используется домен. */
+  /* Показ этих элементов может сломать отображение страниц. */
+  /* До отключения некоторых элементов были предприняты попытки их адаптировать для отображения */
+  /* на мобильных устройствах. Соответствующие черновики могут быть найдены в unused.css */
 
   .menuWrap, /* Всё главное меню */
   #tblUserBox tr:nth-child(5), /* Мои рефералы */
@@ -114,7 +122,7 @@
   #tdLogo, /* Логотип в левом верхнем углу */
   #boxMovie, /* Видео "Куда я попал?!? */
   #boxOnlineHelp, /* Штатные ссылки на соц.сети */
-  #tdContentLeft > div[style="margin-bottom:10px; text-align:center;"] /* Блок со ссылкой "Размещение рекламы" (#lnkAdPlacement) */
+  #tdContentLeft > div[style="margin-bottom:10px; text-align:center;"] /* Контейнер, содержащий "Размещение рекламы" (#lnkAdPlacement) */
   {
     display: none;
   }
@@ -129,7 +137,7 @@
     margin: auto;
   }
 
-  /* Органичиваем ширину диалогового окна */
+  /* Ограничиваем ширину диалогового окна */
   .ui-dialog {
     max-width: 100%;
   }
@@ -169,7 +177,7 @@
       padding-right: 14px;
     }
 
-  /* Скрываем лишнюю отбивку */
+    /* Скрываем лишнюю отбивку */
     #tdContentLeft > div.spacer {
       display: none;
     }
@@ -179,7 +187,7 @@
   /* Заголовок игры в прошедших играх, списке игр и информации об игре */
   /* ----------------------------------------------------------------- */
 
-  /* Элементы с информацией о прошедших играх сейчас не имеют никаких опозновательных признаков, */
+  /* Элементы с информацией о прошедших играх сейчас не имеют никаких опознавательных признаков, */
   /* пригодных для использования в однозначных селекторах. */
 
   /* Существует возможность с помощью jQuery на основании контента в других элементах установить новый класс, */
@@ -189,7 +197,7 @@
   /* Однако добавить такой класс получится лишь когда страница будет уже почти полностью загружена. */
   /* В результате при каждой загрузке страницы сначала будет отображаться одна версия страницы, */
   /* а после выполнения кода, отображение будет меняться. */
-  /* Это будет приводить к морганию интерфейса, тем более на медленном интренете. */
+  /* Это будет приводить к морганию интерфейса, тем более на медленном интернете. */
   /* Более того в некоторых случаях пользователь, желая нажать на один элемент, */
   /* будет нажимать на другой, только что появившийся. */
 
@@ -199,7 +207,7 @@
   /* А ещё я очень надеюсь на небольшие доработки сайта и появление нужных классов. */
 
   /* Для тех, кто захочет использовать javascript, замечу, что некоторые элементы */
-  /* (например, содержимое табов в личном деле) появляются динамичести и */
+  /* (например, содержимое табов в личном деле) появляются динамически и */
   /* нужно будет не забывать следить за этим (например, через MutationObserver).*/
 
   /* На мобильных устройствах */
@@ -249,7 +257,7 @@
     float: left;
   }
 
-  /* Скрываем отдельный элемент с отчеркиванием справа от табов */
+  /* Скрываем отдельный элемент с отчеркиванием справа от табов на небольших устройствах */
   .enMailTab > tbody > tr > td.td_last {
     display: none;
   }
@@ -264,7 +272,7 @@
     }
   }
 
-  /* Схлапываем нижнюю и верхнюю раницы при переносе табов */
+  /* Схлапываем нижнюю и верхнюю границы при переносе табов */
   .enMailTab > tbody > tr > td,
   .enMailTab > tbody > tr > td.td_free {
     margin-top: -1px;
@@ -280,7 +288,7 @@
     margin-left: -1px;
   }
 
-  /* Переносим "Cоздать" на новую строчку */
+  /* Переносим "Создать" на новую строчку на небольших устройствах */
   @media (max-width: 991px) {
     .enMailTab #mailTabNew + td {
       clear: both;
@@ -302,7 +310,7 @@
     padding-top: 8px;
   }
 
-  /* Отключил перенос текста действий с письмом */
+  /* Отключаем перенос текста действий с письмом */
   #EnMailFolderForm .msgHead div[style="padding-top: 12px;"] a {
     white-space: nowrap;
   }
@@ -312,7 +320,7 @@
     white-space: normal;
   }
 
-  /* Создать письмо на планшетах и мобильных */
+  /* Создать письмо на планшетах и телефонах */
   @media (max-width: 767px) {
     /* Разрешаем переносить поля */
     form[action="/EnMail.aspx?ctrl=new"] td {
@@ -332,7 +340,9 @@
   /* --------------------------------------- */
 
   /* Раскладка аватарки и информации */
+  /* Личное дело: */
   script + table > tbody > tr:nth-child(2) div.enPnl1 > table > tbody > tr > td,
+  /* Команда: */
   script + br + div[style="width:100%;"] > div.enPnl1 > table > tbody > tr > td {
     display: inline-block;
     margin-top: 10px;
@@ -353,14 +363,19 @@
     padding-right: 10px;
   }
 
-  /* Табы */
+  /* Схлапываем расстояние между табами */
+  /* Личное дело: */
   script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr,
+  /* Команда: */
   script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr,
+  /* Моя команда (с форумом): */
   script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr,
+  /* Моя команда с управлением форумом: */
   script + br + div[style="width:100%;"] + br + div + div + a + div + div + table + br + br + div table.enTab > tbody > tr {
     font-size: 0;
   }
 
+  /* Разрешаем переносить табы */
   script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr > td,
   script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr > td,
   script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr > td,
@@ -368,6 +383,7 @@
     display: inline-block;
   }
 
+  /* Убираем ширину во весь экран у последнего элемента */
   script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr > td.td_last,
   script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr > td.td_last,
   script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr > td.td_last,
@@ -375,7 +391,7 @@
     width: initial !important;
   }
 
-  /* Схлапываем нижнюю и верхнюю раницы при переносе табов */
+  /* Схлапываем нижнюю и верхнюю границы при переносе табов */
   script + table + div[style="padding-top: 10px;"] > table table.enTab > tbody > tr > td,
   script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr > td,
   script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr > td,
@@ -396,11 +412,14 @@
     margin-right: -1px;
   }
 
-  /* Послужной список */
+  /* Послужной список на телефонах */
   @media (max-width: 479px) {
     /* Скрываем иконки с нумерацию */
+    /* Личное дело: */
     script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table > tbody > tr > td:first-child:not([colspan]),
+    /* Чужая команда: */
     script + br + div + br + br + div #aspnetForm > div + div + table > tbody > tr > td:first-child:not([colspan]),
+    /* Моя команда: */
     table.tblGBSection + br + br + div #aspnetForm > div + div + table > tbody > tr > td:first-child:not([colspan]) {
       display: none;
     }
@@ -457,6 +476,7 @@
     table-layout: fixed;
   }
 
+  /* Скрываем всё, что не вмещается в таблицы "Участие в командах" и "История команды" */
   script + table + div[style="padding-top: 10px;"] > table tr:nth-child(2) table #membershipContent table td,
   script + br + div + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td,
   table.tblGBSection + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td {
@@ -493,17 +513,17 @@
     white-space: normal;
   }
 
-  /* Разрешаем переносить названия игр на вкладке "Cудейство" */
+  /* Разрешаем переносить названия игр на вкладке "Судейство" */
   script + table + div[style="padding-top: 10px;"] > table #content > table.bg_light2 td:nth-child(4)[nowrap="nowrap"] {
     white-space: normal;
   }
 
-  /* Разрешаем разрывать название домена на вкладке "Cудейство" */
+  /* Разрешаем разрывать название домена на вкладке "Судейство" */
   script + table + div[style="padding-top: 10px;"] > table #content > table.bg_light2 td:nth-child(2) {
     word-break: break-all;
   }
 
-  /* Скрываем даты на вкладке "Cудейство" */
+  /* Скрываем даты на вкладке "Судейство" на телефонах */
   @media (max-width: 479px) {
     script + table + div[style="padding-top: 10px;"] > table #content > table.bg_light2 td:nth-child(1) {
       display: none;
@@ -519,20 +539,22 @@
   /* Моя команда */
   /* ----------- */
 
-  /* Убираем недотянутуй отчерк справа в команде */
+  /* Убираем недотянутой отчерк справа в команде */
   script + br + div[style="width:100%;"] + br + br + div table.enTab > tbody > tr > td.td_last,
   script + br + div[style="width:100%;"] + br + div + div + div + table + br + br + div table.enTab > tbody > tr > td.td_last,
   script + br + div[style="width:100%;"] + br + div + div + a + div + div + table + br + br + div table.enTab > tbody > tr > td.td_last {
     display: none;
   }
 
-  /* Форум в команде */
+  /* Скрываем командный форум */
+  /* Ссылка на форум без управления и близлежащие элементы: */
   script + br + div[style="width:100%;"] + br,
   script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"],
   script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"] + div.hr,
   script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"] + div.hr + div[style="height:10; width:1px;"],
   script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"] + div.hr + div[style="height:10; width:1px;"] + table.tblGBSection,
   script + br + div[style="width:100%;"] + br + div[style="padding-bottom: 7px"] + div.hr + div[style="height:10; width:1px;"] + table.tblGBSection + br,
+  /* Управление и близлежащие элементы: */
   a#enhlGBManage,
   a#enhlGBManage + div.hr,
   a#enhlGBManage + div.hr + div[style="height:10; width:1px;"],
@@ -559,7 +581,7 @@
   /* Таблицы с участниками команды */
   /* ----------------------------- */
 
-  /* Перенос имен */
+  /* Разрешаем разрывать имена */
   /* → Капитан команды */
   script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td + td,
   table.tblGBSection + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td + td,
@@ -579,7 +601,7 @@
     word-break: break-all;
   }
 
-  /* Звания */
+  /* Скрываем звания на телефонах */
   @media (max-width: 479px) {
     /* → Капитан команды */
     script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td,
@@ -597,7 +619,7 @@
     }
   }
 
-  /* Пол */
+  /* Скрываем пол на телефонах */
   @media (max-width: 479px) {
     /* → Капитан команды */
     script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td,
@@ -613,7 +635,7 @@
     }
   }
 
-  /* Перенос действий */
+  /* Запрещаем разрывать действия */
   /* → Основной состав команды */
   script + br + div + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td + td + td + td,
   table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] + td + td + td + td,
@@ -626,12 +648,12 @@
     white-space: nowrap;
   }
 
-  /* Приглашенные в команду → лишний столбец */
+  /* Убираем лишний столбец в Приглашенные в команду */
   table.tblGBSection + br + br + div #aspnetForm > table + br + table td:last-child:not([colspan="7"]) {
     display: none;
   }
 
-  /* Компактный вариант действий */
+  /* Компактный вариант действий на телефонах */
   @media (max-width: 479px) {
     table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveFromTeam[href],
     table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveInvitation[href] {
@@ -645,7 +667,7 @@
     }
   }
 
-  /* Ширина последнего столбца */
+  /* Убираем заполнение ширины последним столбцом */
   /* → Основной состав команды */
   script + br + div + br + br + div #aspnetForm > span.white_bold14 + br + table td:last-child,
   table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + table td:last-child,
@@ -766,7 +788,7 @@
     display: inline-block;
   }
 
-  /* Форматирование полей ввода и галочек */
+  /* Редактировании блока "Личные данных" → Форматирование полей ввода и галочек */
   form[name="PersonalDataBlockForm"] table.tblDelim td:nth-child(1) {
     width: 160px;
   }
@@ -775,7 +797,7 @@
     width: initial;
   }
 
-  /* Редактировании блока "Информация для авторизации" → код страны */
+  /* Редактировании блока "Контакты" → код страны */
   form[name="ContactsBlockForm"] table.tblDelim td[width="45px"],
   form[name="ContactsBlockForm"] table.tblDelim td[width="45px"] + td {
     display: inline-block;
@@ -822,7 +844,7 @@
     width: 100% !important;
   }
 
-  /* Загрузка гимна и флага команды → делаем тянущимися поля загрузки файлов */
+  /* Загрузка гимна и флага команды → загрузка файлов */
   form[name="MainForm"] > table > tbody > tr > td > div[style="width:500px;"] {
     width: initial !important;
   }
@@ -898,7 +920,7 @@
   /* Мой баланс */
   /* ---------- */
 
-  /* Перенос заголовка и текста внутри */
+  /* Разрешаем перенос заголовка и текста внутри */
   .padT5 .padT5.padL10.padR10 td.h18[nowrap="nowrap"],
   .padT5 .padT5.padL10.padR10 td.h18[nowrap="nowrap"] + td {
     display: inline-block;
@@ -917,19 +939,19 @@
     display: inline-block;
   }
 
-  /* Перенос времени сообщения и домена на новую строку */
+  /* Разрешаем перенос времени сообщения и домена на новую строку */
   .msgHead .gbUserInfo .nowrap {
     white-space: normal;
   }
 
-  /* Исправлен перенос текста сообщения */
+  /* Исправляем перенос текста сообщения */
   .msgHead .gbMessage {
     clear: both;
   }
 
-  /* На мобильных: */
+  /* На мобильных устройствах: */
   @media (max-width: 767px) {
-    /* Скрываем хлебные крошки */
+    /* Скрываем хлебные крошки и кнопку RSS */
     #tdContentCenter > table:first-child > tbody > tr:first-child > td:first-child > table:first-child > tbody > tr:nth-child(1) > td:nth-child(1) .Text9,
     #tdContentCenter > table:first-child > tbody > tr:first-child > td:first-child > table:first-child > tbody > tr:nth-child(1) > td:nth-child(2)[width="10"] {
       display: none;
@@ -962,9 +984,9 @@
     width: initial !important;
   }
 
-  /* На планшетах */
+  /* На планшетах и телефонах */
   @media (max-width: 767px) {
-    /* Убрали даты регистрации и активность участников */
+    /* Убираем даты регистрации и активность участников */
     h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td:nth-child(6),
     h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td:nth-child(8) {
       display: none;
@@ -976,7 +998,7 @@
     }
   }
 
-  /* На мобилах */
+  /* На телефонах */
   @media (max-width: 479px) {
     /* Разбираем таблицу */
     h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td {
@@ -990,12 +1012,12 @@
   /* Свойства игр */
   /* ------------ */
 
-  /* Мы считаем, что часть свойств игры не нужно отображать, тем более в общем спике на главной странице. */
+  /* Мы считаем, что часть свойств игры не нужно отображать, тем более в общем списке на главной странице. */
 
-  /* Свойства не имеют опозновательных признаков, а их состав может отличаться. */
+  /* Свойства не имеют опознавательных признаков, а их состав может отличаться. */
   /* Поэтому единственный вариант - использовать javascript. */
 
-  /* Чтобы уменьшить моргания после загрузки страницы, предворительно скрываем лишнюю информацию. */
+  /* Чтобы уменьшить моргания после загрузки страницы, предварительно скрываем лишнюю информацию. */
   /* Селекторы по номеру могут быть ошибочными. Javascript исправит это как только будет готов. */
 
   /* Список игр: */
@@ -1024,9 +1046,9 @@
 <script type="text/javascript" src="http://yastatic.net/share2/share.js"></script>
 <script type="text/javascript" src="http://world.en.cx/js/v2/jQuery/jquery.cookie.js?ver=1.43.2.1"></script>
 <script type="text/javascript">// <![CDATA[
-  /* ----------------------------- */
-  /* Поддержка мобильных устройств */
-  /* ----------------------------- */
+  /* ------------------------------------------------------------------------------------------- */
+  /* Отключаем необходимость масштабирования до нормального отображения на мобильных устройствах */
+  /* ------------------------------------------------------------------------------------------- */
 
   var metaTag = document.createElement('meta');
   metaTag.name = "viewport";
@@ -1037,7 +1059,8 @@
   /* Отключение мобильной версии сайта */
   /* --------------------------------- */
 
-  /* Реализация из кнопки "Полная версия" с m.domain_name */
+  /* Реализация mainSite() взята из кнопки "Полная версия" с m.[domain_name] */
+
   /* for nginx - if we don't set cookie 'mobile' to '0', */
   /* nginx will redirect mobile browsers from [domain_name] to m.[domain_name] */
   function mainSite() {
@@ -1052,7 +1075,9 @@
     $.cookie('mobile', '0', {path: "/", domain: cookieDomain});
   }
 
-  /* Перенаправляем на нормальный сайт, чтобы избежать перехода в мобильную версию движка по кнопке "Вход в игру" */
+  /* Перенаправляем на обычный сайт. */
+  /* Несмотря на то, что m.[domain_name] может отображать обычные страницы, */
+  /* по кнопке "Вход в игру" он открываем мобильную версию движка. */
   function mainSiteOptionalRedirect() {
     var domain = document.location.host;
     if (domain.indexOf("m.") == 0) {
@@ -1077,6 +1102,8 @@
           '<div class="re-game-share-placeholder"></div>' +
         '</div>'
       ).insertAfter($(this).closest('table'));
+
+      /* Явная инициализация используется в связи с необходимостью подключения hooks. */
       var placeholder = $('.re-game-share-placeholder', container).get(0);
       Ya.share2(placeholder, {
         theme: {
@@ -1089,6 +1116,8 @@
         },
         hooks: {
           onready: function () {
+            /* В связи с блокировкой РосКомНадзором самостоятельно собираем ссылку для телеграма. */
+            /* Ссылка по протоколу tg будет работать только если в системе установлено соответствующее приложение. */
             var link = $('.ya-share2__item_service_telegram a', placeholder);
             var href = 'tg://msg_url?url=' + encodeURIComponent(url) +
               '&text=' + encodeURIComponent(title) +
@@ -1105,6 +1134,15 @@
   /* ---------------------- */
   /* Соц.сети и наши друзья */
   /* ---------------------- */
+
+  /* Иконки соц.сетей взяты с https://www.iconfinder.com/iconsets/social-media-2146 */
+
+  /* En.cx для svg файлов указывает тип text/plan, поэтому браузеры отказываются отображать отдельные svg файлы. */
+
+  /* Одна версия растрового изображения будут не очень хорошо смотреться на устройства с высокой плотностью пикселей. */
+  /* Загружать и прописывать несколько версий изображений под разную плотность не очень хочется. */
+  /* К тому же используется высота иконок, отсутствующая на iconfinder. */
+  /* Поэтому содержимое svg файлов было вставлено в код. */
 
   $(document).ready(function () {
     var social =
@@ -1129,7 +1167,10 @@
         '</p>' +
       '</div>';
 
+    /* Добавляем соц.сети и наших друзей в левую колонку */
     $('#boxOnlineHelp').after(social + friends);
+
+    /* Добавляем соц.сети в подвал сайта */
     $('.re-social-placeholder').html(social);
   });
 
@@ -1138,16 +1179,17 @@
   /* -------------- */
 
   $(document).ready(function () {
-    /* Исправление невозможности переноса имени пользователя, содержащего Hangul Jungseong Filler */
+    /* Исправление невозможности переноса имени пользователя, содержащего Hangul Jungseong Filler. */
+    /* Например, http://58.en.cx/UserDetails.aspx?uid=1497416 */
     $("#aspnetForm a:contains('\u1160')").each(function () {
       var text = $(this).text();
       $(this).text(text.replace(new RegExp('\u1160', 'g'), '\u00A0'));
     });
   });
 
-  /* -------------------------------- */
-  /* Скрываем возможнсть отправки SMS */
-  /* -------------------------------- */
+  /* --------------------------------- */
+  /* Скрываем возможность отправки SMS */
+  /* --------------------------------- */
 
   $(document).ready(function () {
     /* Отправить SMS сообщение членам команды */
@@ -1262,7 +1304,6 @@
       }
     };
   });
-
 // ]]></script>
 <div class="default" id="up"><img onclick="return uparrow()" src="http://d1.endata.cx/images/personal/1454107/strelka.png" alt="" /></div>
 <!------------------------->
