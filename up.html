@@ -243,10 +243,12 @@
     float: left;
   }
 
-  /* Скрываем отчеркивание справа от табов */
+  /* Скрываем отдельный элемент с отчеркиванием справа от табов */
   .enMailTab > tbody > tr > td.td_last {
     display: none;
   }
+
+  /* Добавляем отчерк на строку таблицы */
   @media (min-width: 992px) {
     .enMailTab > tbody > tr {
       background: url("http://cdn.endata.cx/images/tab/EnMail/freeBg.gif") repeat-x bottom;
