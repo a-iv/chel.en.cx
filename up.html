@@ -664,7 +664,7 @@
   }
 
   /* Приглашенные в команду → лишний столбец */
-  table.tblGBSection + br + br + div #aspnetForm > table + br + table td:last-child {
+  table.tblGBSection + br + br + div #aspnetForm > table + br + table td:last-child:not([colspan="7"]) {
     display: none;
   }
 
