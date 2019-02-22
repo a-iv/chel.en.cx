@@ -1291,7 +1291,8 @@
 --></style>
 <script type="text/javascript">// <![CDATA[
 
-  document.addEventListener("DOMContentLoaded", function (event) {
+  $(document).ready(function () {
+
     window.onscroll = function () {
       var up = document.getElementById("up");
       var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
@@ -1301,9 +1302,7 @@
         up.className = "default";
       }
     };
-  });
 
-  $(document).ready(function () {
     var up = $('#up');
     up.click(function () {
       $('html, body').animate({scrollTop: 0}, '300');
