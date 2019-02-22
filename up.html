@@ -1292,6 +1292,7 @@
 <script type="text/javascript">// <![CDATA[
 
   $(document).ready(function () {
+    var up = $('#up');
 
     window.onscroll = function () {
       var up = document.getElementById("up");
@@ -1303,7 +1304,6 @@
       }
     };
 
-    var up = $('#up');
     up.click(function () {
       $('html, body').animate({scrollTop: 0}, '300');
     });
