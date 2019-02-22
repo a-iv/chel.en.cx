@@ -146,7 +146,9 @@
   }
 
   /* Сжимаем до размера экрана слишком большие картинки */
-  #tdContentCenter img {
+  .divDescr img, /* В списке игр */
+  .gameInfo ~ table img /* В анонсах */
+  {
     max-width: 100%;
   }
 
