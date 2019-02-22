@@ -1290,18 +1290,6 @@
   <!--
 --></style>
 <script type="text/javascript">// <![CDATA[
-  var upTimeout;
-
-  function uparrow() {
-    var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-    if (scrollTop > 0) {
-      window.scrollBy(0, -100);
-      upTimeout = setTimeout('uparrow()', 20);
-    } else {
-      clearTimeout(upTimeout);
-    }
-    return false;
-  }
 
   document.addEventListener("DOMContentLoaded", function (event) {
     window.onscroll = function () {
@@ -1317,7 +1305,9 @@
 
   $(document).ready(function () {
     var up = $('#up');
-    up.click(uparrow);
+    up.click(function () {
+      $('html, body').animate({scrollTop: 0}, '300');
+    });
   });
 
 // ]]></script>
