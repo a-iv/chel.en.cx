@@ -1296,9 +1296,9 @@
 
     $(window).scroll(function () {
       var scrollTop = $(window).scrollTop();
-      if (scrollTop > 1000 && up.attr('class') === 'default') {
+      if (scrollTop > 500 && up.attr('class') === 'default') {
         up.attr('class', 'fixed');
-      } else if (scrollTop <= 1000 && up.attr('class') === 'fixed') {
+      } else if (scrollTop <= 500 && up.attr('class') === 'fixed') {
         up.attr('class', 'default');
       }
     });
