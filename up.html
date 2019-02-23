@@ -320,6 +320,18 @@
     white-space: nowrap;
   }
 
+  /* Компактный вариант действий на телефонах */
+  @media (max-width: 479px) {
+    #EnMailFolderForm .msgHead div[style="padding-top: 12px;"] a[style="color:Red;"] {
+      font-size: 0;
+    }
+
+    #EnMailFolderForm .msgHead div[style="padding-top: 12px;"] a[style="color:Red;"]::after {
+      content: 'x';
+      font-size: 12px;
+    }
+  }
+
   /* Разрешил перенос длинного времени и домена */
   #EnMailFolderForm .msgHead .msgDateTime {
     white-space: normal;
@@ -952,6 +964,12 @@
   /* Исправляем перенос текста сообщения */
   .msgHead .gbMessage {
     clear: both;
+  }
+
+  /* Разрешаем разрывать текст длинных ссылок */
+  .msgHead .gbMessage a {
+    word-break: break-all;
+    display: inline-block;
   }
 
   /* Исправляем схлапывание ширины аватарки */
