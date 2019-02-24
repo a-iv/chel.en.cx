@@ -454,6 +454,13 @@
       display: none;
     }
 
+    /* Скрываем ссылку на помощь с огромной формулой */
+    script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table > tbody > tr > td:nth-child(2) a.gold,
+    script + br + div + br + br + div #aspnetForm > div + div + table > tbody > tr > td:nth-child(2) a.gold,
+    table.tblGBSection + br + br + div #aspnetForm > div + div + table > tbody > tr > td:nth-child(2) a.gold {
+      display: none;
+    }
+
     /* Уменьшаем заголовки */
     script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table .white_bold13,
     script + br + div + br + br + div #aspnetForm > div + div + table .white_bold13,
@@ -649,6 +656,24 @@
     word-break: break-all;
   }
 
+  /* Скрываем id на телефонах */
+  @media (max-width: 479px) {
+    /* → Капитан команды */
+    script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] span[class="yellow_darkgreen"],
+    table.tblGBSection + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] span[class="yellow_darkgreen"],
+    /* → Основной состав команды */
+    script + br + div + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] span[class="yellow_darkgreen"],
+    table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + table td[height="21"] span[class="yellow_darkgreen"],
+    table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + br + span.Text4white + br + table td[height="21"] span[class="yellow_darkgreen"],
+    /* → Запасной состав команды */
+    script + br + div + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] span[class="yellow_darkgreen"],
+    table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + table td[height="18"] span[class="yellow_darkgreen"],
+    /* → Приглашенные в команду */
+    table.tblGBSection + br + br + div #aspnetForm > table + br + table td[height="21"] span[class="yellow_darkgreen"] {
+      display: none;
+    }
+  }
+
   /* Скрываем звания на телефонах */
   @media (max-width: 479px) {
     /* → Капитан команды */
@@ -701,17 +726,33 @@
     display: none;
   }
 
-  /* Компактный вариант действий на телефонах */
-  @media (max-width: 479px) {
+  /* Компактный вариант действий на планшетах и телефонах */
+  @media (max-width: 767px) {
     table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveFromTeam[href],
+    table.tblGBSection + br + br + div #aspnetForm a#lnkReject[href],
+    table.tblGBSection + br + br + div #aspnetForm a#lnkJoinToTeam[href],
     table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveInvitation[href] {
       font-size: 0;
     }
 
     table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveFromTeam[href]::before,
+    table.tblGBSection + br + br + div #aspnetForm a#lnkReject[href]::before,
+    table.tblGBSection + br + br + div #aspnetForm a#lnkJoinToTeam[href]::before,
+    table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveInvitation[href]::before {
+      font-size: 12px;
+    }
+
+    table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveFromTeam[href]::before,
     table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveInvitation[href]::before {
       content: 'x';
-      font-size: 12px;
+    }
+
+    table.tblGBSection + br + br + div #aspnetForm a#lnkReject[href]::before {
+      content: '⌀';
+    }
+
+    table.tblGBSection + br + br + div #aspnetForm a#lnkJoinToTeam[href]::before {
+      content: '✔';
     }
   }
 
