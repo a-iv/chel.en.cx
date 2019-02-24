@@ -284,74 +284,23 @@
     }
   }
 
-  /* Используем другую раскладку в ТОП-10 на мобильных устройствах */
+  /* Уменьшаем ТОП-10 для телефонов */
   @media (max-width: 480px) {
-    /* Восстанавливаем размер текста */
+    /* Уменьшаем шрифт */
     span#lblTop10Game + br + br + table td,
     span#lblTop10Game + br + br + table td:nth-child(1) span,
     span#lblTop10Game + br + br + table td:nth-child(1)::before {
-      font-size: 12px;
+      font-size: 9px;
     }
 
-    /* Раскладываем ячейки в строку */
-    span#lblTop10Game + br + br + table td {
-      height: initial;
-      padding: 0 4px 0 8px;
-      display: inline-block;
-      float: left;
-      text-align: left;
-    }
-
-    /* Добавляем отступы */
-    span#lblTop10Game + br + br + table td:nth-child(1),
+    /* Уменьшаем ширину названия команды */
     span#lblTop10Game + br + br + table td:nth-child(2) {
-      margin-top: 4px;
-    }
-    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td + td {
-      margin-bottom: 4px;
+      min-width: 66px;
     }
 
-    /* Убираем лишний отступ перед названием команды */
-    span#lblTop10Game + br + br + table td:nth-child(2) {
-      padding-left: 0;
-    }
-
-    /* Убираем заголовок таблицы */
-    span#lblTop10Game + br + br + table tr.topWinnerHead {
+    /* Скрываем чистый финиш */
+    span#lblTop10Game + br + br + table td:nth-child(3) {
       display: none;
-    }
-
-    /* Добавляем переносы срок */
-    span#lblTop10Game + br + br + table td:nth-child(3),
-    span#lblTop10Game + br + br + table td#TdBonusLink,
-    span#lblTop10Game + br + br + table td#TdPenaltyLink,
-    span#lblTop10Game + br + br + table td#TdCorrectedDateTime,
-    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td,
-    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td + td {
-      clear: both;
-    }
-
-    /* Добавляем заголовки */
-    span#lblTop10Game + br + br + table td:nth-child(1)::before {
-      content: 'Команда: ';
-    }
-    span#lblTop10Game + br + br + table td:nth-child(3)::before {
-      content: 'Финиш: ';
-    }
-    span#lblTop10Game + br + br + table td#TdBonusLink::before {
-      content: 'Бонус: ';
-    }
-    span#lblTop10Game + br + br + table td#TdPenaltyLink::before {
-      content: 'Штраф: ';
-    }
-    span#lblTop10Game + br + br + table td#TdCorrectedDateTime::before {
-      content: 'Финиш (–бонусы +штрафы): ';
-    }
-    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td::before {
-      content: 'Очки: ';
-    }
-    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td + td::before {
-      content: 'Оценки: ';
     }
   }
 
