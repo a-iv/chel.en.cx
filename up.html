@@ -429,6 +429,19 @@
     margin-right: -1px;
   }
 
+  /* Отключаем разворачивание послужного списка на всю ширину экрана */
+  script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table,
+  script + br + div + br + br + div #aspnetForm > div + div + table,
+  table.tblGBSection + br + br + div #aspnetForm > div + div + table {
+    width: initial;
+  }
+
+  script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table td[width="100%"],
+  script + br + div + br + br + div #aspnetForm > div + div + table td[width="100%"],
+  table.tblGBSection + br + br + div #aspnetForm > div + div + table td[width="100%"] {
+    width: initial;
+  }
+
   /* Послужной список на телефонах */
   @media (max-width: 479px) {
     /* Скрываем иконки с нумерацию */
@@ -598,6 +611,25 @@
   /* Таблицы с участниками команды */
   /* ----------------------------- */
 
+  /* Отключаем разворачивание таблиц на всю страницу */
+  /* → Капитан команды */
+  script + br + div + br + br + div #aspnetForm > table:nth-child(6),
+  table.tblGBSection + br + br + div #aspnetForm > table:nth-child(6),
+  /* → Основной состав команды */
+  script + br + div + br + br + div #aspnetForm > span.white_bold14 + br + table,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + table,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + br + br + span.Text4white + br + table,
+  /* → Запасной состав команды */
+  script + br + div + br + br + div #aspnetForm > span.white_bold14 + table,
+  table.tblGBSection + br + br + div #aspnetForm > span.white_bold14 + table,
+  /* → Приглашенные в команду */
+  table.tblGBSection + br + br + div #aspnetForm > table + br + table,
+  /* → Приглашение вступить в команду */
+  table.tblGBSection + br + br + div #aspnetForm > table + table:last-child,
+  table.tblGBSection + br + br + div #aspnetForm > a[name="invite"] table:last-child {
+    width: initial !important;
+  }
+
   /* Разрешаем разрывать имена */
   /* → Капитан команды */
   script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td + td,
@@ -614,7 +646,6 @@
   /* → Приглашение вступить в команду */
   table.tblGBSection + br + br + div #aspnetForm > table + table:last-child td:nth-child(2),
   table.tblGBSection + br + br + div #aspnetForm > a[name="invite"] table:last-child td:nth-child(2) {
-    width: 100%;
     word-break: break-all;
   }
 
