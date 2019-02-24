@@ -47,7 +47,7 @@
     display: none;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .re-header-image .logo-desktop {
       display: none;
     }
@@ -86,7 +86,7 @@
   }
 
   /* На мобильный устройствах: */
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .re-friends, /* "Наши друзья" не отображаются */
     .re-social /* Социальные сети отображаются в подвале сайта (см. bottom.html) */
     {
@@ -161,7 +161,7 @@
   /* Раскладка колонок для мобильной версии */
   /* -------------------------------------- */
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     /* Переносим левую панель в начало страницы */
     #tdContentLeft {
       display: inline-block;
@@ -216,7 +216,7 @@
   /* нужно будет не забывать следить за этим (например, через MutationObserver).*/
 
   /* На мобильных устройствах */
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
 
     /* Позволяем разделить заголовок игры на несколько строк */
     #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
@@ -290,7 +290,7 @@
   .enMailTab > tbody > tr {
     background: url("http://cdn.endata.cx/images/tab/EnMail/freeBg.gif") repeat-x bottom;
   }
-  @media (max-width: 991px) {
+  @media (max-width: 992px) {
     .enMailTab > tbody > tr {
       background: none;
     }
@@ -313,7 +313,7 @@
   }
 
   /* Переносим "Создать" на новую строчку на небольших устройствах */
-  @media (max-width: 991px) {
+  @media (max-width: 992px) {
     .enMailTab #mailTabNew + td {
       clear: both;
     }
@@ -340,7 +340,7 @@
   }
 
   /* Компактный вариант действий на телефонах */
-  @media (max-width: 479px) {
+  @media (max-width: 480px) {
     #EnMailFolderForm .msgHead div[style="padding-top: 12px;"] a[style="color:Red;"] {
       font-size: 0;
     }
@@ -357,7 +357,7 @@
   }
 
   /* Создать письмо на планшетах и телефонах */
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     /* Разрешаем переносить поля */
     form[action="/EnMail.aspx?ctrl=new"] td {
       margin-top: 8px;
@@ -462,7 +462,7 @@
   }
 
   /* Послужной список на телефонах */
-  @media (max-width: 479px) {
+  @media (max-width: 480px) {
     /* Скрываем иконки с нумерацию */
     /* Личное дело: */
     script + table + div[style="padding-top: 10px;"] > table #aspnetForm > div + div + table > tbody > tr > td:first-child:not([colspan]),
@@ -580,7 +580,7 @@
   }
 
   /* Скрываем даты на вкладке "Судейство" на телефонах */
-  @media (max-width: 479px) {
+  @media (max-width: 480px) {
     script + table + div[style="padding-top: 10px;"] > table #content > table.bg_light2 td:nth-child(1) {
       display: none;
     }
@@ -676,7 +676,7 @@
   }
 
   /* Скрываем id на телефонах */
-  @media (max-width: 479px) {
+  @media (max-width: 480px) {
     /* → Капитан команды */
     script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] span[class="yellow_darkgreen"],
     table.tblGBSection + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] span[class="yellow_darkgreen"],
@@ -694,7 +694,7 @@
   }
 
   /* Скрываем звания на телефонах */
-  @media (max-width: 479px) {
+  @media (max-width: 480px) {
     /* → Капитан команды */
     script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td,
     table.tblGBSection + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td,
@@ -712,7 +712,7 @@
   }
 
   /* Скрываем пол на телефонах */
-  @media (max-width: 479px) {
+  @media (max-width: 480px) {
     /* → Капитан команды */
     script + br + div + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td,
     table.tblGBSection + br + br + div #aspnetForm > table:nth-child(6) td[height="18"] + td + td,
@@ -746,7 +746,7 @@
   }
 
   /* Компактный вариант действий на планшетах и телефонах */
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     table.tblGBSection + br + br + div #aspnetForm a#lnkRemoveFromTeam[href],
     table.tblGBSection + br + br + div #aspnetForm a#lnkReject[href],
     table.tblGBSection + br + br + div #aspnetForm a#lnkJoinToTeam[href],
@@ -977,7 +977,7 @@
   }
 
   /* Редактировании блока "Места обитания" → раскладка для широких полей */
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     form[name="LocationBlockForm"] > div > div > table > tbody > tr > td {
       display: block;
       width: initial !important;
@@ -1013,7 +1013,7 @@
   }
 
   /* Редактировании блока "Дополнительная информация" → раскладка для широких полей */
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     form[name="AdditionalInfoBlockForm"] > div > div > table > tbody > tr > td {
       display: block;
       width: initial !important;
@@ -1072,7 +1072,7 @@
   }
 
   /* На мобильных устройствах: */
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     /* Скрываем хлебные крошки и кнопку RSS */
     #tdContentCenter > table:first-child > tbody > tr:first-child > td:first-child > table:first-child > tbody > tr:nth-child(1) > td:nth-child(1) .Text9,
     #tdContentCenter > table:first-child > tbody > tr:first-child > td:first-child > table:first-child > tbody > tr:nth-child(1) > td:nth-child(2)[width="10"] {
@@ -1107,7 +1107,7 @@
   }
 
   /* На планшетах и телефонах */
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     /* Убираем даты регистрации и активность участников */
     h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td:nth-child(6),
     h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td:nth-child(8) {
@@ -1121,7 +1121,7 @@
   }
 
   /* На телефонах */
-  @media (max-width: 479px) {
+  @media (max-width: 480px) {
     /* Разбираем таблицу */
     h1 + br + #MainForm[class="noPadMarg"] > table:nth-child(4) > tbody > tr > td {
       display: inline-block;
