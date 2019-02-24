@@ -244,6 +244,25 @@
     display: none;
   }
 
+  /* Уменьшаем ТОП-10 игры */
+  span#lblTop10Game + br + br + table td {
+    white-space: normal;
+    padding: 5px 0;
+    word-break: break-all;
+    font-size: 8px;
+  }
+
+  /* Убираем жирный из ТОП-10 игры */
+  span#lblTop10Game + br + br + table td.topWinners,
+  span#lblTop10Game + br + br + table td.topWinners b {
+    font-weight: normal;
+  }
+
+  /* Отключаем перенос очков на новую строку в ТОП-10 игры */
+  span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td {
+    word-break: normal;
+  }
+
   /* ----- */
   /* Почта */
   /* ----- */
