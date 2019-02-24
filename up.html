@@ -244,23 +244,115 @@
     display: none;
   }
 
-  /* Уменьшаем ТОП-10 игры */
+  /* Разрешаем переносить слова в ТОП-10 */
   span#lblTop10Game + br + br + table td {
     white-space: normal;
-    padding: 5px 0;
+  }
+
+  /* Разрешаем разрывать текст в названиях команд в ТОП-10 */
+  span#lblTop10Game + br + br + table td:nth-child(2) {
     word-break: break-all;
-    font-size: 8px;
+    min-width: 80px;
   }
 
-  /* Убираем жирный из ТОП-10 игры */
-  span#lblTop10Game + br + br + table td.topWinners,
-  span#lblTop10Game + br + br + table td.topWinners b {
-    font-weight: normal;
+  /* Убираем лишний символ из столбца с номером команды в ТОП-10 */
+  span#lblTop10Game + br + br + table td:nth-child(1) {
+    font-size: 0;
+  }
+  span#lblTop10Game + br + br + table td:nth-child(1) span,
+  span#lblTop10Game + br + br + table td:nth-child(1)::before {
+    font-size: 12px;
   }
 
-  /* Отключаем перенос очков на новую строку в ТОП-10 игры */
-  span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td {
-    word-break: normal;
+  /* Уменьшаем ТОП-10 для планшетов */
+  @media (max-width: 768px) {
+    /* Убираем отступы */
+    span#lblTop10Game + br + br + table td {
+      padding: 0;
+    }
+
+    /* Уменьшаем шрифт */
+    span#lblTop10Game + br + br + table td,
+    span#lblTop10Game + br + br + table td:nth-child(1) span,
+    span#lblTop10Game + br + br + table td:nth-child(1)::before {
+      font-size: 10px;
+    }
+
+    /* Убираем жирный из ТОП-10 игры */
+    span#lblTop10Game + br + br + table td.topWinners {
+      font-weight: normal;
+    }
+  }
+
+  /* Используем другую раскладку в ТОП-10 на мобильных устройствах */
+  @media (max-width: 480px) {
+    /* Восстанавливаем размер текста */
+    span#lblTop10Game + br + br + table td,
+    span#lblTop10Game + br + br + table td:nth-child(1) span,
+    span#lblTop10Game + br + br + table td:nth-child(1)::before {
+      font-size: 12px;
+    }
+
+    /* Раскладываем ячейки в строку */
+    span#lblTop10Game + br + br + table td {
+      height: initial;
+      padding: 0 4px 0 8px;
+      display: inline-block;
+      float: left;
+      text-align: left;
+    }
+
+    /* Добавляем отступы */
+    span#lblTop10Game + br + br + table td:nth-child(1),
+    span#lblTop10Game + br + br + table td:nth-child(2) {
+      margin-top: 4px;
+    }
+    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td + td {
+      margin-bottom: 4px;
+    }
+
+    /* Убираем лишний отступ перед названием команды */
+    span#lblTop10Game + br + br + table td:nth-child(2) {
+      padding-left: 0;
+    }
+
+    /* Убираем заголовок таблицы */
+    span#lblTop10Game + br + br + table tr.topWinnerHead {
+      display: none;
+    }
+
+    /* Добавляем переносы срок */
+    span#lblTop10Game + br + br + table td:nth-child(3),
+    span#lblTop10Game + br + br + table td#TdBonusLink,
+    span#lblTop10Game + br + br + table td#TdPenaltyLink,
+    span#lblTop10Game + br + br + table td#TdCorrectedDateTime,
+    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td,
+    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td + td {
+      clear: both;
+    }
+
+    /* Добавляем заголовки */
+    span#lblTop10Game + br + br + table td:nth-child(1)::before {
+      content: 'Команда: ';
+    }
+    span#lblTop10Game + br + br + table td:nth-child(3)::before {
+      content: 'Финиш: ';
+    }
+    span#lblTop10Game + br + br + table td#TdBonusLink::before {
+      content: 'Бонус: ';
+    }
+    span#lblTop10Game + br + br + table td#TdPenaltyLink::before {
+      content: 'Штраф: ';
+    }
+    span#lblTop10Game + br + br + table td#TdCorrectedDateTime::before {
+      content: 'Финиш (–бонусы +штрафы): ';
+    }
+    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td::before {
+      content: 'Очки: ';
+    }
+    span#lblTop10Game + br + br + table td#TdCorrectedDateTime + td + td::before {
+      content: 'Оценки: ';
+    }
   }
 
   /* ----- */
