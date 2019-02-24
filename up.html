@@ -1260,7 +1260,8 @@
     if (cookieDomain.indexOf('.') >= 0) {
       cookieDomain = cookieDomain.indexOf("m.") == 0 ? cookieDomain.substr(1) : "." + cookieDomain;
     }
-    $.cookie('mobile', '0', {path: "/", domain: cookieDomain});
+    /* Устанавливаем куку на 10 лет, а не на сессию как было в оригинальном скрипте */
+    $.cookie('mobile', '0', {path: "/", domain: cookieDomain, expires: 3650});
   }
 
   /* Перенаправляем на обычный сайт. */
