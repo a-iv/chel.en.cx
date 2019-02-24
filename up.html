@@ -1285,7 +1285,11 @@
       var element = $(this);
       var title = element.text();
       var url = 'http://' + location.hostname + element.attr('href');
-      var image = $('.divDescr img', element.closest('.gameInfo')).first().attr('src');
+      var description = $('.divDescr', element.closest('.gameInfo'));
+      if (description) {
+        description = $('#lblFromAuthor').closest('td');
+      }
+      var image = $('img', description).first().attr('src');
       var container = $(
         '<div class="re-game-share">' +
           '<div class="re-game-share-label">Поделиться: </div>' +
