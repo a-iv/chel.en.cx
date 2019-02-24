@@ -1197,14 +1197,16 @@
 
   $(document).ready(function () {
     $('a#lnkGameTitle').each(function () {
-      var title = $(this).text();
-      var url = 'http://' + location.hostname + $(this).attr('href');
+      var element = $(this);
+      var title = element.text();
+      var url = 'http://' + location.hostname + element.attr('href');
+      var image = $('.divDescr img', element.closest('.gameInfo')).first().attr('src');
       var container = $(
         '<div class="re-game-share">' +
           '<div class="re-game-share-label">Поделиться: </div>' +
           '<div class="re-game-share-placeholder"></div>' +
         '</div>'
-      ).insertAfter($(this).closest('table'));
+      ).insertAfter(element.closest('table'));
 
       /* Явная инициализация используется в связи с необходимостью подключения hooks. */
       var placeholder = $('.re-game-share-placeholder', container).get(0);
@@ -1215,6 +1217,7 @@
         },
         content: {
           title: title,
+          image: image,
           url: url
         },
         hooks: {
