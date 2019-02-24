@@ -566,18 +566,43 @@
     }
   }
 
-  /* Ширина таблицы "Участие в командах" и "История команды" */
-  script + table + div[style="padding-top: 10px;"] > table tr:nth-child(2) table #membershipContent table,
-  script + br + div + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table,
-  table.tblGBSection + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table {
-    table-layout: fixed;
-  }
-
-  /* Скрываем всё, что не вмещается в таблицы "Участие в командах" и "История команды" */
+  /* Убираем лишние поля в таблицах "Участие в командах" и "История команды" */
   script + table + div[style="padding-top: 10px;"] > table tr:nth-child(2) table #membershipContent table td,
   script + br + div + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td,
   table.tblGBSection + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td {
-    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Разрешаем разрывать длинные имена в таблицах "Участие в командах" и "История команды" */
+  script + table + div[style="padding-top: 10px;"] > table tr:nth-child(2) table #membershipContent table td:nth-child(2),
+  script + br + div + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td:nth-child(2),
+  table.tblGBSection + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td:nth-child(2) {
+    min-width: 80px;
+    word-break: break-all;
+  }
+
+  /* Уменьшаем "Участие в командах" и "История команды" на телефонах */
+  @media (max-width: 480px) {
+    /* Уменьшаем шрифт таблицы */
+    script + table + div[style="padding-top: 10px;"] > table tr:nth-child(2) table #membershipContent table td,
+    script + br + div + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td,
+    table.tblGBSection + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table td {
+      font-size: 9px;
+    }
+
+    /* Подменяем текст заголовка */
+    script + table + div[style="padding-top: 10px;"] > table tr:nth-child(2) table #membershipContent table tr:first-child td:first-child,
+    script + br + div + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table tr:first-child td:first-child,
+    table.tblGBSection + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table tr:first-child td:first-child {
+      font-size: 0;
+    }
+    script + table + div[style="padding-top: 10px;"] > table tr:nth-child(2) table #membershipContent table tr:first-child td:first-child::after,
+    script + br + div + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table tr:first-child td:first-child::after,
+    table.tblGBSection + br + br + div div[style="padding: 4px 4px 10px 4px;"] > div > table tr:first-child td:first-child::after {
+      font-size: 9px;
+      content: 'Дата/время';
+    }
   }
 
   /* --------------- */
