@@ -188,9 +188,9 @@
     }
   }
 
-  /* ----------------------------------------------------------------- */
-  /* Заголовок игры в прошедших играх, списке игр и информации об игре */
-  /* ----------------------------------------------------------------- */
+  /* ---------------------------------------------------------------------------------- */
+  /* Заголовок игры в прошедших играх, бонусах/штрафах, списке игр + информации об игре */
+  /* ---------------------------------------------------------------------------------- */
 
   /* Элементы с информацией о прошедших играх сейчас не имеют никаких опознавательных признаков, */
   /* пригодных для использования в однозначных селекторах. */
@@ -220,6 +220,7 @@
 
     /* Позволяем разделить заголовок игры на несколько строк */
     #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
+    span.crumbLastItem + table table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
     .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td {
       display: inline-block;
       padding-bottom: 5px;
@@ -227,6 +228,7 @@
 
     /* Выравнивание по левому краю */
     #tdContentCenter > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h,
+    span.crumbLastItem + table table[background="http://cdn.endata.cx/images/green_lines.gif"] td,
     .gameInfo table[background="http://cdn.endata.cx/images/green_lines.gif"] td.left5p19h {
       padding-left: 0;
     }
@@ -305,6 +307,155 @@
 
     /* Скрываем чистый финиш */
     span#lblTop10Game + br + br + table td:nth-child(3) {
+      display: none;
+    }
+  }
+
+  /* --------------- */
+  /* Бонусы и штрафы */
+  /* --------------- */
+
+  /* Позволяем разрывать фильтры */
+  span.crumbLastItem + table + div.hr + table form[method=get] + tbody td {
+    float: left;
+    height: 20px;
+  }
+
+  /* Исправляем наличие пробела перед некоторыми полями фильтра */
+  span.crumbLastItem + table + div.hr + table form[method=get] + tbody td {
+    margin-left: -6px;
+    margin-right: 6px;
+  }
+  span.crumbLastItem + table + div.hr + table form[method=get] + tbody td:nth-child(1)::before,
+  span.crumbLastItem + table + div.hr + table form[method=get] + tbody td:nth-child(2)::before {
+    content: '\00a0';
+  }
+
+  /* Добавляем переносы фильтра на новую строку */
+  span.crumbLastItem + table + div.hr + table form[method=get] + tbody td:nth-child(2) {
+    clear: both;
+  }
+  @media (max-width: 992px) {
+    span.crumbLastItem + table + div.hr + table form[method=get] + tbody td:nth-child(6) {
+      clear: both;
+    }
+  }
+  @media (max-width: 480px) {
+    span.crumbLastItem + table + div.hr + table form[method=get] + tbody td:nth-child(4),
+    span.crumbLastItem + table + div.hr + table form[method=get] + tbody td:nth-child(8) {
+      clear: both;
+    }
+  }
+
+  /* Отключаем разворачивание таблицы на всю ширину страницы */
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light,
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light td,
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light,
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light td {
+    width: initial;
+  }
+
+  /* Включаем возможность переноса слов */
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light td,
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light td {
+    white-space: normal;
+  }
+
+  /* Добавляем пробелы в заголовки */
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(1)::before,
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(1)::before {
+    content: 'Дата / время';
+  }
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(4)::before,
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(4)::before {
+    content: 'Действие / причина';
+  }
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(5)::before,
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(5)::before {
+    content: 'Бонус / штраф';
+  }
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(1),
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(4),
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(5),
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(1),
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(4),
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(5) {
+    font-size: 0;
+  }
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(1)::before,
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(4)::before,
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(5)::before,
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(1)::before,
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(4)::before,
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(5)::before {
+    font-size: 12px;
+  }
+
+  /* Позволяем разрывать слово "Комментарий" */
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(6),
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(6) {
+    word-break: break-all;
+  }
+
+  /* Разрешаем побуквенный перенос ников */
+  span.crumbLastItem + table + div.hr + table + div.hr + table.table_light td:nth-child(2),
+  span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light td:nth-child(2) {
+    word-break: break-all;
+    min-width: 80px;
+  }
+  @media (max-width: 480px) {
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light td:nth-child(2),
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light td:nth-child(2) {
+      min-width: 50px;
+    }
+  }
+
+  /* Уменьшаем таблицу */
+  @media (max-width: 992px) {
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light td,
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(1)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(4)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(5)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light td,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(1)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(4)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(5)::before {
+      font-size: 11px;
+    }
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light td,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light td {
+      padding: 0 !important;;
+    }
+  }
+  @media (max-width: 768px) {
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light td,
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(1)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(4)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(5)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light td,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(1)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(4)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(5)::before {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 480px) {
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light td,
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(1)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(4)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr:first-child td:nth-child(5)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light td,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(1)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(4)::before,
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr:first-child td:nth-child(5)::before {
+      font-size: 9px;
+    }
+  }
+
+  /* На телефонах скрываем столбец "Действие/причина" */
+  @media (max-width: 480px) {
+    span.crumbLastItem + table + div.hr + table + div.hr + table.table_light tr td:nth-child(4),
+    span.crumbLastItem + table + div.hr + table + div.hr + table[width="100%"] + table.table_light tr td:nth-child(4) {
       display: none;
     }
   }
