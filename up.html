@@ -298,6 +298,11 @@
       min-width: 66px;
     }
 
+    /* Скрываем решетку перед номером игры */
+    span#lblTop10Game + br + br + table td:nth-child(1) .yellow_darkgreen {
+      display: none;
+    }
+
     /* Скрываем чистый финиш */
     span#lblTop10Game + br + br + table td:nth-child(3) {
       display: none;
