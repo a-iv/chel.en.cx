@@ -1288,6 +1288,10 @@
 
   $(document).ready(function () {
     $('a#lnkGameTitle').each(function () {
+      /* Не добавляем ссылки на сам анонс на страницу "Бонусы и штрафы" */
+      if ($('h1').text() === "Бонусы и штрафы") {
+        return;
+      }
       var element = $(this);
       var title = element.text();
       var url = 'http://' + location.hostname + element.attr('href');
