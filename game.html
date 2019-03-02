@@ -1,22 +1,17 @@
 ﻿<style>
-/* Убираем невозможность уменьшения ширины экрана */
 body {
   min-width: initial;
 }
 
-/* Исправляем отступ под кнопки справа в шапке */
 .header {
   padding-right: 445px;
 }
 
-/* Ограничиваем ширину картинок */
 .content img {
   max-width: 100%;
 }
 
-/* На малых размерх экрана: */
 @media (max-width: 768px) {
-  /* Изменяем раскладку шапки */
   .header {
     position: initial;
     min-height: initial;
@@ -89,18 +84,15 @@ body {
       background-position-x: -157px;
   }
 
-  /* Отключаем кнопки печати и отправки на email */
   .header li.print,
   .header li.mail {
     display: none;
   }
 
-  /* Ограничиваем высоту поля с предыдущими ответами */
   #this.pane {
     max-height: 55px;
   }
 
-  /* Изменяем раскладку поля ввода и задания */
   .aside {
     height: initial;
     width: initial;
@@ -116,12 +108,10 @@ body {
     margin-left: 0;
   }
 
-  /* Скрываем историю и форму чата */
   #ChatFrame, #ChatForm {
     display: none !important;
   }
 
-  /* Разбираем колонки секторов */
   .cols-wrapper .cols {
     width: initial;
     float: initial;
@@ -130,7 +120,6 @@ body {
 }
 </style>
 <script type="text/javascript">
-  /* Отключаем попытки мобильного браузера показывать страницу больше, чем она есть */
   var metaTag = document.createElement('meta');
   metaTag.name = "viewport";
   metaTag.content = "width=device-width, initial-scale=1";
