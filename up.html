@@ -278,7 +278,7 @@
     span#lblTop10Game ~ br + br + table td,
     span#lblTop10Game ~ br + br + table td:nth-child(1) span,
     span#lblTop10Game ~ br + br + table td:nth-child(1)::before {
-      font-size: 10px;
+      font-size: 9px;
     }
 
     /* Убираем жирный из ТОП-10 игры */
@@ -289,13 +289,6 @@
 
   /* Уменьшаем ТОП-10 для телефонов */
   @media (max-width: 480px) {
-    /* Уменьшаем шрифт */
-    span#lblTop10Game ~ br + br + table td,
-    span#lblTop10Game ~ br + br + table td:nth-child(1) span,
-    span#lblTop10Game ~ br + br + table td:nth-child(1)::before {
-      font-size: 9px;
-    }
-
     /* Уменьшаем ширину названия команды */
     span#lblTop10Game ~ br + br + table td:nth-child(2) {
       min-width: 66px;
