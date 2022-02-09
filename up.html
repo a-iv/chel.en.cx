@@ -248,41 +248,41 @@
   }
 
   /* Разрешаем переносить слова в ТОП-10 */
-  span#lblTop10Game + br + br + table td {
+  span#lblTop10Game ~ br + br + table td {
     white-space: normal;
   }
 
   /* Разрешаем разрывать текст в названиях команд в ТОП-10 */
-  span#lblTop10Game + br + br + table td:nth-child(2) {
+  span#lblTop10Game ~ br + br + table td:nth-child(2) {
     word-break: break-all;
     min-width: 80px;
   }
 
   /* Убираем лишний символ из столбца с номером команды в ТОП-10 */
-  span#lblTop10Game + br + br + table td:nth-child(1) {
+  span#lblTop10Game ~ br + br + table td:nth-child(1) {
     font-size: 0;
   }
-  span#lblTop10Game + br + br + table td:nth-child(1) span,
-  span#lblTop10Game + br + br + table td:nth-child(1)::before {
+  span#lblTop10Game ~ br + br + table td:nth-child(1) span,
+  span#lblTop10Game ~ br + br + table td:nth-child(1)::before {
     font-size: 12px;
   }
 
   /* Уменьшаем ТОП-10 для планшетов */
   @media (max-width: 768px) {
     /* Убираем отступы */
-    span#lblTop10Game + br + br + table td {
+    span#lblTop10Game ~ br + br + table td {
       padding: 0;
     }
 
     /* Уменьшаем шрифт */
-    span#lblTop10Game + br + br + table td,
-    span#lblTop10Game + br + br + table td:nth-child(1) span,
-    span#lblTop10Game + br + br + table td:nth-child(1)::before {
+    span#lblTop10Game ~ br + br + table td,
+    span#lblTop10Game ~ br + br + table td:nth-child(1) span,
+    span#lblTop10Game ~ br + br + table td:nth-child(1)::before {
       font-size: 10px;
     }
 
     /* Убираем жирный из ТОП-10 игры */
-    span#lblTop10Game + br + br + table td.topWinners {
+    span#lblTop10Game ~ br + br + table td.topWinners {
       font-weight: normal;
     }
   }
@@ -290,24 +290,24 @@
   /* Уменьшаем ТОП-10 для телефонов */
   @media (max-width: 480px) {
     /* Уменьшаем шрифт */
-    span#lblTop10Game + br + br + table td,
-    span#lblTop10Game + br + br + table td:nth-child(1) span,
-    span#lblTop10Game + br + br + table td:nth-child(1)::before {
+    span#lblTop10Game ~ br + br + table td,
+    span#lblTop10Game ~ br + br + table td:nth-child(1) span,
+    span#lblTop10Game ~ br + br + table td:nth-child(1)::before {
       font-size: 9px;
     }
 
     /* Уменьшаем ширину названия команды */
-    span#lblTop10Game + br + br + table td:nth-child(2) {
+    span#lblTop10Game ~ br + br + table td:nth-child(2) {
       min-width: 66px;
     }
 
     /* Скрываем решетку перед номером игры */
-    span#lblTop10Game + br + br + table td:nth-child(1) .yellow_darkgreen {
+    span#lblTop10Game ~ br + br + table td:nth-child(1) .yellow_darkgreen {
       display: none;
     }
 
     /* Скрываем чистый финиш */
-    span#lblTop10Game + br + br + table td:nth-child(3) {
+    span#lblTop10Game ~ br + br + table td:nth-child(3) {
       display: none;
     }
   }
